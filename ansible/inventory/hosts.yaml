@@ -1,0 +1,13 @@
+---
+kubernetes:
+  children:
+    master:
+      hosts:
+        m1:
+          ansible_user: debian
+          ansible_host: 207.127.90.159
+    worker:
+      hosts:
+        w1:
+          ansible_user: debian
+          ansible_host: 129.151.208.165
