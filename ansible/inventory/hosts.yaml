@@ -5,4 +5,4 @@ kubernetes:
       hosts:
         m1:
           ansible_user: debian
-          ansible_host: 158.179.204.60
+          ansible_host: 129.151.212.221

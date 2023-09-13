@@ -17,7 +17,6 @@ k3s_server:
     - coredns                         # Disable coredns                 - replaced with Coredns Helm Chart
     - local-storage                   # Disable local-path-provisioner  - installed with Flux
     - metrics-server                  # Disable metrics-server          - installed with Flux
-    - servicelb                       # Disable servicelb               - replaced with Cilium Helm Chart
     - traefik                         # Disable traefik                 - replaced with ingress-nginx and installed with Flux
   disable-network-policy: true
   disable-cloud-controller: true
