@@ -5,8 +5,11 @@
 k3s_control_node: true
 k3s_server:
   node-ip: "{{ ansible_default_ipv4.address  }},{{ ansible_default_ipv6.address }}"
+  node-external-ip: "{{ ansible_host }}"
   tls-san:
     - "{{ kube_vip_addr }}"
+    - "{{ ansible_default_ipv4.address }}"
+    - "{{ ansible_default_ipv6.address }}"
   docker: false
   flannel-backend: "none"             # This needs to be in quotes
   disable:
