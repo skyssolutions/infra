@@ -24,27 +24,19 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  dependsOn:
-    - name: cloudflared
-      namespace: networking
   values:
     fullnameOverride: nginx-external
     controller:
       replicaCount: 1
       service:
-        annotations:
-          external-dns.alpha.kubernetes.io/hostname: "external.${SECRET_DOMAIN}"
-        externalTrafficPolicy: Cluster
+        type: ClusterIP
+        ipFamilyPolicy: RequireDualStack
+      publishService:
+        enabled: false
+      hostPort:
+        enabled: true
       ingressClassResource:
-        name: external
         default: true
-        controllerValue: k8s.io/external
-      admissionWebhooks:
-        objectSelector:
-          matchExpressions:
-            - key: ingress-class
-              operator: In
-              values: ["external"]
       config:
         client-body-buffer-size: 100M
         client-body-timeout: 120
