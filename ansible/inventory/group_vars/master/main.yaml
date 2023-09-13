@@ -10,21 +10,20 @@ k3s_server:
     - "{{ kube_vip_addr }}"
     - "{{ ansible_default_ipv4.address }}"
     - "{{ ansible_default_ipv6.address }}"
+    - "{{ ansible_host }}"
   docker: false
-  flannel-backend: "none"             # This needs to be in quotes
+  flannel-backend: "vxlan"
   disable:
     - coredns                         # Disable coredns                 - replaced with Coredns Helm Chart
-    - flannel                         # Disable flannel                 - replaced with Cilium Helm Chart
     - local-storage                   # Disable local-path-provisioner  - installed with Flux
     - metrics-server                  # Disable metrics-server          - installed with Flux
     - servicelb                       # Disable servicelb               - replaced with Cilium Helm Chart
     - traefik                         # Disable traefik                 - replaced with ingress-nginx and installed with Flux
   disable-network-policy: true
   disable-cloud-controller: true
-  disable-kube-proxy: true            # Cilium uses eBPF
   write-kubeconfig-mode: "644"
-  cluster-cidr: "{{ cluster_cidr }}"
-  service-cidr: "{{ service_cidr }}"
+  cluster-cidr: "{{ cluster_cidr }},{{ cluster_cidr_v6 }}"
+  service-cidr: "{{ service_cidr }},{{ service_cidr_v6 }}"
   etcd-expose-metrics: true           # Required to monitor etcd with kube-prometheus-stack
   kube-controller-manager-arg:
     - "bind-address=0.0.0.0"          # Required to monitor kube-controller-manager with kube-prometheus-stack
