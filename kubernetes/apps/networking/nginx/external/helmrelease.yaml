@@ -34,11 +34,10 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: "external.${SECRET_DOMAIN}"
-          io.cilium/lb-ipam-ips: "10.0.0.101"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: external
-        default: false
+        default: true
         controllerValue: k8s.io/external
       admissionWebhooks:
         objectSelector:
