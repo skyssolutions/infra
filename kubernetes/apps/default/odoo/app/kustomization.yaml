@@ -1,6 +1,6 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./namespace.yaml
-  - ./odoo/ks.yaml
+  - ./pvc.yaml
+  - ./secret.sops.yaml
+  - ./helm-release.yaml
