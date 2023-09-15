@@ -31,6 +31,7 @@ spec:
     image:
       repository: ghcr.io/samipsolutions/odoo
       tag: "16.0"
+      pullPolicy: Always
     service:
       main:
         ports:
