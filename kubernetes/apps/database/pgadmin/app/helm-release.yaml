@@ -35,10 +35,9 @@ spec:
     strategy:
       type: Recreate
 
-    env:
-      PGADMIN_DEFAULT_EMAIL: sm@${SECRET_DOMAIN}
-      PGADMIN_DEFAULT_PASSWORD: ${PASSWORD}
-
+    envFrom:
+      - secretRef:
+          name: pgadmin-secret
     service:
       main:
         ports:
