@@ -6,7 +6,7 @@ metadata:
 spec:
   dependsOn:
     - name: database-cloudnative-pg-cluster
-  path: ./kubernetes/apps/database/pgadmin/admin
+  path: ./kubernetes/apps/database/pgadmin/app
   prune: true
   sourceRef:
     kind: GitRepository
