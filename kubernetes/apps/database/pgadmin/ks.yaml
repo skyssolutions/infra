@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: database-cloudnative-cluster
+    - name: database-cloudnative-pg-cluster
   path: ./kubernetes/apps/database/pgadmin/admin
   prune: true
   sourceRef:
