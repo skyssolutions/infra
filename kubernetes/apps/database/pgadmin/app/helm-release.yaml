@@ -51,7 +51,7 @@ spec:
         storageClass: zfs
         mountPath: "/var/lib/pgadmin"
         size: 1Gi
-      local_config:
+      local-config:
         enabled: true
         type: configMap
         name: pgadmin-local-config-configmap
