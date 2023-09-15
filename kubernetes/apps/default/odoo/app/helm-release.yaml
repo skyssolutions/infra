@@ -32,6 +32,8 @@ spec:
       repository: ghcr.io/samipsolutions/odoo
       tag: "16.0@sha256:254447a20b8102341850e4eceec6b56590421cce4a0636e67b5a2c9203cdf139"
       pullPolicy: Always
+    args:
+      - -i base
     service:
       main:
         ports:
