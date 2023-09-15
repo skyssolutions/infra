@@ -41,6 +41,8 @@ spec:
       main:
         enabled: true
         ingressClassName: nginx
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN}"
         hosts:
           - host: &host "erp.samipsolutions.fi"
             paths:
