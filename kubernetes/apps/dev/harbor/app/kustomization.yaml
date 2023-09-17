@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev
+resources:
+  - ./helm-release.yaml
+  - ./secret.sops.yaml
+  - ./pvc/registry.yaml
+  - ./pvc/jobservice.yaml
+  - ./pvc/jobservice-scandata.yaml
+  - ./pvc/database.yaml
+  - ./pvc/redis.yaml
+  - ./pvc/trivy.yaml
