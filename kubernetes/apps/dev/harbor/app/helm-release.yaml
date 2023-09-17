@@ -111,14 +111,14 @@ spec:
     core:
       image:
         repository: ghcr.io/octohelm/harbor/harbor-core
-        tag: dev-arm
+        tag: v2.8.3
       revisionHistoryLimit: 3
       podAnnotations:
         secret.reloader.stakater.com/reload: "harbor-secrets"
     jobservice:
       image:
         repository: ghcr.io/octohelm/harbor/harbor-jobservice
-        tag: 2.8.3
+        tag: v2.8.3
       revisionHistoryLimit: 3
     registry:
       registry:
