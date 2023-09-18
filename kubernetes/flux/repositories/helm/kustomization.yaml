@@ -24,3 +24,4 @@ resources:
   - ./piraeus.yaml
   - ./democratic-csi.yaml
   - ./fairwinds.yaml
+  - ./windmill.yaml
