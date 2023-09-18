@@ -11,6 +11,22 @@
         "commitMessageTopic": "{{{groupName}}} group"
       },
       "separateMinorPatch": true
+    },
+    {
+      "description": "Harbor Group",
+      "groupName": "Harbor",
+      "matchPackagePatterns": [
+        "ghcr.io/octohelm/harbor"
+      ],
+      "matchDatasources": [
+        "docker",
+        "github-tags"
+      ],
+      "versioning": "semver",
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      },
+      "separateMinorPatch": true,
     }
   ]
 }
