@@ -126,7 +126,7 @@ spec:
       registry:
         image:
           repository: ghcr.io/octohelm/harbor/registry-photon
-          tag: v2.8.3
+          tag: v2.9.0
       controller:
         image:
           repository: ghcr.io/octohelm/harbor/harbor-registryctl
