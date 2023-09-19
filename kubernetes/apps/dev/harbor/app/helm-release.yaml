@@ -98,7 +98,7 @@ spec:
           # multipartcopymaxconcurrency: 100
           # multipartcopythresholdsize: "33554432"
 
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
     updateStrategy:
       type: Recreate
     # debug, info, warning, error or fatal
