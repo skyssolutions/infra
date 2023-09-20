@@ -152,21 +152,17 @@ spec:
     database:
       # if external database is used, set "type" to "external"
       # and fill the connection information in "external" section
-      type: internal
-      internal:
-        image:
-          repository: ghcr.io/octohelm/harbor/harbor-db
-          tag: v2.9.0
-      #external:
-      #  host: "192.168.0.1"
-      #  port: "5432"
-      #  username: "user"
+      type: external
+      external:
+        host: "postgres-default-rw.database.svc.cluster.local"
+        port: "5432"
+        username: "harbor"
       #  password: "password"
-      #  coreDatabase: "registry"
+        coreDatabase: "harbor"
         # if using existing secret, the key must be "password"
-      #  existingSecret: ""
-      maxIdleConns: 100
-      maxOpenConns: 900
+        existingSecret: "harbor-secrets"
+      maxIdleConns: 50
+      maxOpenConns: 100
       podAnnotations: {}
 
     redis:
