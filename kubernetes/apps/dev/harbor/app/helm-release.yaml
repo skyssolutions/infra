@@ -142,7 +142,7 @@ spec:
     chartmuseum:
       enabled: false
     trivy:
-      enabled: true
+      enabled: false
       image:
         repository: ghcr.io/octohelm/harbor/trivy-adapter-photon
         tag: v2.9.0
