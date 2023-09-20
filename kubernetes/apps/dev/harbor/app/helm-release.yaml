@@ -231,3 +231,7 @@ spec:
       kind: Secret
       name: harbor-secrets
       valuesKey: databaseInternalPassword
+    - targetPath: secretKey
+      kind: Secret
+      name: harbor-secrets
+      valuesKey: secretKey
