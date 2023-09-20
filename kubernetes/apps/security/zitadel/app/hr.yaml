@@ -46,10 +46,10 @@ spec:
             Admin:
               SSL:
                 Mode: disable
-          LogStore:
-            Access:
-              Stdout:
-                Enabled: true
+        LogStore:
+          Access:
+            Stdout:
+              Enabled: true
 
         ExternalDomain: &host auth.${SECRET_DOMAIN}
         # specifies if ZITADEL is exposed externally through TLS
