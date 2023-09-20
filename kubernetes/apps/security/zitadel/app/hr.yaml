@@ -22,7 +22,7 @@ spec:
       # https://github.com/zitadel/zitadel/blob/main/cmd/defaults.yaml
       configmapConfig:
         Log:
-          Level: debug
+          Level: info
           Formatter:
             Format: text
         FirstInstance:
@@ -49,7 +49,7 @@ spec:
         LogStore:
           Access:
             Stdout:
-              Enabled: true
+              Enabled: false
 
         ExternalDomain: &host auth.${SECRET_DOMAIN}
         # specifies if ZITADEL is exposed externally through TLS
