@@ -1,0 +1,144 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: forego
+  namespace: dev
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: forgejo
+      version: 0.12.1
+      sourceRef:
+        kind: HelmRepository
+        name: forego-helm
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    gitea:
+      admin:
+        username: kryptonian
+      config:
+        APP_NAME: 'Forego'
+
+        repository:
+          DEFAULT_BRANCH: main
+          DEFAULT_PRIVATE: true
+        admin:
+          DISABLE_REGULAR_ORG_CREATION: true
+        security:
+          PASSWORD_COMPLEXITY: "lower,upper"
+          MIN_PASSWORD_LENGTH: 12
+        service:
+          DISABLE_REGISTRATION: true
+          REQUIRE_SIGNIN_VIEW: true
+        cron:
+          ENABLED: true
+        database:
+          DB_TYPE: postgres
+          HOST: postgres-default-rw.database.svc.cluster.local:5432
+          NAME: forgejo
+          SCHEMA: public
+          SSL_MODE: disable
+        mailer:
+          ENABLED: true
+          MAILER_TYPE: smtp
+          SMTP_ADDR: smtp-relay.default
+          SMTP_PORT: 2525
+          FROM: "Forgejo <forgejo@${SECRET_DOMAIN}>"
+        cache:
+          ADAPTER: redis
+          HOST: redis://redis.database.svc.cluster.local:6379/11
+        queue:
+          TYPE: redis
+          CONN_STR: redis://redis.database.svc.cluster.local:6379/10
+        session:
+          PROVIDER: redis
+          PROVIDER_CONFIG: redis://redis.database.svc.cluster.local:6379/12
+
+
+        indexer:
+          REPO_INDEXER_ENABLED: true
+          REPO_INDEXER_REPO_TYPES: sources
+
+    image:
+      registry: "codeberg.org"
+      repository: forgejo/forgejo
+      tag: "1.20.4-1"
+      rootless: true
+
+    podSecurityContext:
+      fsGroup: 1000
+
+    service:
+      ssh:
+        hostPort: 222
+    ingress:
+      enabled: true
+      className: nginx
+      hosts:
+        - host: &host "git.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+           - *host
+
+    postgresql:
+      enabled: false
+
+    resources:
+      requests:
+        memory: 128Mi
+      limits:
+        memory: 1Gi
+
+    persistence:
+      enabled: true
+      size: 20Gi
+      accessModes:
+        - ReadWriteOnce
+
+    valuesFrom:
+      - targetPath: gitea.admin.email
+        kind: Secret
+        name: forego-secret
+        valuesKey: FOREGO_ADMIN_EMAIL
+      - targetPath: gitea.admin.password
+        kind: Secret
+        name: forego-secret
+        valuesKey: FOREGO_ADMIN_PASSWORD
+      - targetPath: gitea.config.database.PASSWD
+        kind: Secret
+        name: forego-secret
+        valuesKey: POSTGRES_PASSWORD
+      - targetPath: gitea.config.database.USER
+        kind: Secret
+        name: forego-secret
+        valuesKey: POSTGRES_USERNAME
+    postRenderers:
+      - kustomize:
+          patches:
+            - kind: Deployment
+              apiVersion: apps/v1
+              metadata:
+                name: forgejo
+              spec:
+                template:
+                  spec:
+                    initContainers:
+                      - name: 01-init-db
+                        image: ghcr.io/auricom/postgres-init:15.4
+                        imagePullPolicy: IfNotPresent
+                        envFrom:
+                          - secretRef:
+                              name: forego-secret
