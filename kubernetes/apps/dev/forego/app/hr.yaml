@@ -84,6 +84,9 @@ spec:
     ingress:
       enabled: true
       className: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+        external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN}
       hosts:
         - host: &host "git.${SECRET_DOMAIN}"
           paths:
