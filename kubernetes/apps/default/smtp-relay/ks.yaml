@@ -7,7 +7,7 @@ metadata:
 spec:
   dependsOn:
     - name: system-doppler-secret
-  path: ./kubernetes/apps/default/windmill/app
+  path: ./kubernetes/apps/default/smtp-relay/app
   prune: true
   sourceRef:
     kind: GitRepository
