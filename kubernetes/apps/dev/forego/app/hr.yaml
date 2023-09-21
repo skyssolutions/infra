@@ -50,7 +50,7 @@ spec:
           SSL_MODE: disable
         mailer:
           ENABLED: true
-          MAILER_TYPE: smtp
+          PROTOCOL: smtp
           SMTP_ADDR: smtp-relay.default
           SMTP_PORT: 2525
           FROM: "Forgejo <forgejo@${SECRET_DOMAIN}>"
