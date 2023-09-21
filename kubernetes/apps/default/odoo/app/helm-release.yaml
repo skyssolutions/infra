@@ -30,7 +30,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/samipsolutions/odoo
-      tag: "16.0@sha256:fee61c971d06e8de7fb86dc812ae1bb93442466f001fb697d234473b14e481e4"
+      tag: "16.0@sha256:41b46f31818f909af392f8e64c84ca69966ee4683251219d70e9c48694521202"
       pullPolicy: Always
     service:
       main:
