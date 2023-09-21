@@ -6,4 +6,4 @@ metadata:
 spec:
   interval: 1h
   type: oci
-  url: oci://codeberg.org/forgejo-contrib/forgejo
+  url: oci://codeberg.org/forgejo-contrib
