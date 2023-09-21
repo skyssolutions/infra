@@ -5,3 +5,9 @@ resources:
   - ./pvc-addons.yaml
   - ./secret.sops.yaml
   - ./helm-release.yaml
+configMapGenerator:
+  - name: odoo-configmap
+    files:
+      - ./config/odoo.conf
+generatorOptions:
+  disableNameSuffixHash: true
