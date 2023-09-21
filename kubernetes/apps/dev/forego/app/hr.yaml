@@ -129,7 +129,7 @@ spec:
       valuesKey: POSTGRES_USERNAME
   postRenderers:
     - kustomize:
-        patches:
+        patchesStrategicMerge:
           - kind: Deployment
             apiVersion: apps/v1
             metadata:
@@ -139,7 +139,7 @@ spec:
                 spec:
                   initContainers:
                     - name: 01-init-db
-                      image: ghcr.io/auricom/postgres-init:15.4
+                      image: ghcr.io/onedr0p/postgres-init:14.5
                       imagePullPolicy: IfNotPresent
                       envFrom:
                         - secretRef:
