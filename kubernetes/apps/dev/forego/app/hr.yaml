@@ -37,6 +37,8 @@ spec:
         security:
           PASSWORD_COMPLEXITY: "lower,upper"
           MIN_PASSWORD_LENGTH: 12
+        server:
+          SSH_PORT: 222
         service:
           DISABLE_REGISTRATION: true
           REQUIRE_SIGNIN_VIEW: true
