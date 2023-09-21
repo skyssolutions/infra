@@ -95,6 +95,8 @@ spec:
 
     postgresql:
       enabled: false
+    memcached:
+      enabled: false
 
     resources:
       requests:
@@ -108,37 +110,37 @@ spec:
       accessModes:
         - ReadWriteOnce
 
-    valuesFrom:
-      - targetPath: gitea.admin.email
-        kind: Secret
-        name: forego-secret
-        valuesKey: FOREGO_ADMIN_EMAIL
-      - targetPath: gitea.admin.password
-        kind: Secret
-        name: forego-secret
-        valuesKey: FOREGO_ADMIN_PASSWORD
-      - targetPath: gitea.config.database.PASSWD
-        kind: Secret
-        name: forego-secret
-        valuesKey: POSTGRES_PASSWORD
-      - targetPath: gitea.config.database.USER
-        kind: Secret
-        name: forego-secret
-        valuesKey: POSTGRES_USERNAME
-    postRenderers:
-      - kustomize:
-          patches:
-            - kind: Deployment
-              apiVersion: apps/v1
-              metadata:
-                name: forgejo
-              spec:
-                template:
-                  spec:
-                    initContainers:
-                      - name: 01-init-db
-                        image: ghcr.io/auricom/postgres-init:15.4
-                        imagePullPolicy: IfNotPresent
-                        envFrom:
-                          - secretRef:
-                              name: forego-secret
+  valuesFrom:
+    - targetPath: gitea.admin.email
+      kind: Secret
+      name: forego-secret
+      valuesKey: FOREGO_ADMIN_EMAIL
+    - targetPath: gitea.admin.password
+      kind: Secret
+      name: forego-secret
+      valuesKey: FOREGO_ADMIN_PASSWORD
+    - targetPath: gitea.config.database.PASSWD
+      kind: Secret
+      name: forego-secret
+      valuesKey: POSTGRES_PASSWORD
+    - targetPath: gitea.config.database.USER
+      kind: Secret
+      name: forego-secret
+      valuesKey: POSTGRES_USERNAME
+  postRenderers:
+    - kustomize:
+        patches:
+          - kind: Deployment
+            apiVersion: apps/v1
+            metadata:
+              name: forgejo
+            spec:
+              template:
+                spec:
+                  initContainers:
+                    - name: 01-init-db
+                      image: ghcr.io/auricom/postgres-init:15.4
+                      imagePullPolicy: IfNotPresent
+                      envFrom:
+                        - secretRef:
+                            name: forego-secret
