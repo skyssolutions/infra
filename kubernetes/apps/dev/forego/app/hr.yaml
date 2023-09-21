@@ -133,7 +133,7 @@ spec:
           - kind: Deployment
             apiVersion: apps/v1
             metadata:
-              name: forgejo
+              name: gitea
             spec:
               template:
                 spec:
