@@ -5,3 +5,4 @@ resources:
   - ./namespace.yaml
   - ./odoo/ks.yaml
   - ./windmill/ks.yaml
+  - ./smtp-relay/ks.yaml
