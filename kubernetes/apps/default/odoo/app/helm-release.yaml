@@ -64,3 +64,7 @@ spec:
         enabled: true
         existingCLaim: odoo-config-v1
         mountPath: /var/lib/odoo
+      extra-addons:
+        enabled: true
+        existingClaim: odoo-addons-v1
+        mountPath: /mnt/extra-addons
