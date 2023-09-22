@@ -69,7 +69,7 @@ spec:
 
     agent:
      enabled: true
-     replicaCount: 1
+     replicaCount: 4
 
      env:
        WOODPECKER_SERVER: "woodpecker-server:9000"
