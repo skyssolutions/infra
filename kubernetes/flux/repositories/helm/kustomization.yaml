@@ -25,4 +25,5 @@ resources:
   - ./democratic-csi.yaml
   - ./fairwinds.yaml
   - ./windmill.yaml
+  - ./woodpecker.yaml
   - ./zitadel.yaml
