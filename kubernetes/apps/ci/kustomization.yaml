@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
   - ./ns.yaml
   - ./woodpecker/ks.yaml
-  - ./woodpecker/ks-agent.yaml
