@@ -69,7 +69,7 @@ spec:
 
     agent:
      enabled: true
-     replicaCount: 4
+     replicaCount: 2
 
      image:
        registry: registry.samipsolutions.fi
