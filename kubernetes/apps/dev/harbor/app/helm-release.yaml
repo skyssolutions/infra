@@ -63,7 +63,7 @@ spec:
         redis:
           existingClaim: "harbor-redis"
         trivy:
-          existingClaim: "harbor-trivy"
+          existingClaim: "harbor-trivy-v2"
 
       imageChartStorage:
         # Specify whether to disable `redirect` for images and chart storage, for
