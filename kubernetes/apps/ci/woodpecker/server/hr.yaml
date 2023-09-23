@@ -26,10 +26,10 @@ spec:
     server:
       enabled: true
       image:
-        registry: docker.io
-        repository: woodpeckerci/woodpecker-server
-        pullPolicy: IfNotPresent
-        tag: ""
+        registry: registry.samipsolutions.fi
+        repository: docker/woodpeckerci/woodpecker-server
+        pullPolicy: Always
+        tag: "next"
       env:
         WOODPECKER_ADMIN: "kryptonian,admin"
         WOODPECKER_HOST: "https://ci.${SECRET_DOMAIN}"
@@ -70,6 +70,12 @@ spec:
     agent:
      enabled: true
      replicaCount: 4
+
+     image:
+       registry: registry.samipsolutions.fi
+       repository: docker/woodpeckerci/woodpecker-agent
+       pullPolicy: Always
+       tag: "next"
 
      env:
        WOODPECKER_SERVER: "woodpecker-server:9000"
