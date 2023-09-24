@@ -27,6 +27,7 @@ spec:
   values:
     controller:
       replicaCount: 1
+      allowSnippetAnnotations: true
       service:
         type: ClusterIP
         ipFamilyPolicy: RequireDualStack
