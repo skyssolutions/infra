@@ -22,6 +22,7 @@ resources:
   - ./stakater.yaml
   - ./weave-gitops.yaml
   - ./piraeus.yaml
+  - ./piped.yaml
   - ./democratic-csi.yaml
   - ./fairwinds.yaml
   - ./windmill.yaml
