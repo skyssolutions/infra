@@ -23,8 +23,6 @@ metadata:
   name: cluster-apps-nginx
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cluster-apps-nginx-certificates
   path: ./kubernetes/apps/networking/nginx/app
   prune: true
   sourceRef:
