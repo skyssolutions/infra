@@ -26,6 +26,8 @@ spec:
     keepHistory: false
   values:
    fullnameOverride: &name kapsi-external
+   podAnnotations:
+     secret.reloader.stakater.com/reload: externaldns-kapsi-secrets
 
    domainFilters:
      - piped.fi
