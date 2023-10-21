@@ -18,6 +18,16 @@ spec:
           dnsZones:
             - "${SECRET_DOMAIN}"
             - "${SECRET_DOMAIN_2}"
+      - selector:
+          dnsZones:
+            - "piped.fi"
+        rfc2136:
+          nameserver: ns1.kapsi.fi
+          tsigKeyname: skyexternaldns
+          tsigAlgorithm: HMACSSHA256
+          tsigSecretSecretRef:
+            name: kapsi-tsig
+            key: secret
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
