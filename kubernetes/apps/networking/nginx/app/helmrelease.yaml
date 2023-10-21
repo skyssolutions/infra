@@ -30,7 +30,6 @@ spec:
       allowSnippetAnnotations: true
       service:
         type: LoadBalancer
-        ipFamilyPolicy: RequireDualStack
       publishService:
         enabled: true
       hostPort:
