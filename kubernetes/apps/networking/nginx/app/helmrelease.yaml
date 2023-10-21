@@ -29,9 +29,10 @@ spec:
       replicaCount: 1
       allowSnippetAnnotations: true
       service:
-        type: LoadBalancer
+        type: ClusterIP
+        ipFamilyPolicy: RequireDualStack
       publishService:
-        enabled: true
+        enabled: false
       hostPort:
         enabled: true
       ingressClassResource:
