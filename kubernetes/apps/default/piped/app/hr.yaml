@@ -66,7 +66,8 @@ spec:
       main:
         enabled: true
         ingressClassName: nginx
-        external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
+        annotations:
+         external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
         hosts:
           - host: &host piped.fi
             paths:
@@ -79,8 +80,6 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          external-dns-cf/is-public: "true"
-          external-dns-cf/is-dns-public: "true"
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
         hosts:
           - host: &api_host api.piped.fi
@@ -95,8 +94,6 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          external-dns-cf/is-public: "true"
-          external-dns-cf/is-dns-public: "true"
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
         hosts:
           - host: &proxy proxy.piped.fi
