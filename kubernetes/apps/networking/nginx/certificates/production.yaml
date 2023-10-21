@@ -13,3 +13,18 @@ spec:
   dnsNames:
     - "${SECRET_DOMAIN}"
     - "*.${SECRET_DOMAIN}"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: "piped-production"
+  namespace: networking
+spec:
+  secretName: "piped-production-tls"
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "piped.fi"
+  dnsNames:
+    - "piped.fi"
+    - "*.piped.fi"

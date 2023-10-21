@@ -6,3 +6,4 @@ resources:
   - ./odoo/ks.yaml
   - ./windmill/ks.yaml
   - ./smtp-relay/ks.yaml
+  - ./piped/ks.yaml
