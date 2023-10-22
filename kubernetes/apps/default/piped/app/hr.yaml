@@ -50,7 +50,7 @@ spec:
         PORT: 8080
         NUM_WORKERS: 2
         PROXY_PART: https://proxy.piped.fi
-        DISABLE_REGISTRATION: true
+        #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
           secret: *secret
