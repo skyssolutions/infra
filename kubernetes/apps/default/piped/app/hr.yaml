@@ -73,7 +73,7 @@ spec:
         tls:
           - hosts:
               - *host
-        secretName: piped-production-tls
+            secretName: piped-production-tls
 
       backend:
         enabled: true
@@ -87,7 +87,7 @@ spec:
         tls:
           - hosts:
               - *api_host
-        secretName: piped-production-tls
+            secretName: piped-production-tls
 
 
       ytproxy:
@@ -102,6 +102,6 @@ spec:
         tls:
           - hosts:
               - *proxy
-        secretName: piped-production-tls
+            secretName: piped-production-tls
     postgresql:
       enabled: false
