@@ -37,6 +37,7 @@ spec:
         WOODPECKER_GITEA: true
         WOODPECKER_GITEA_SKIP_VERIFY: "true"
         WOODPECKER_OPEN: false
+        WOODPECKER_DATABASE_DRIVER: postgres
 
       extraSecretNamesForEnvFrom:
         - woodpecker

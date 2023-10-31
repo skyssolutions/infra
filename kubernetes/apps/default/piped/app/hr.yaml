@@ -33,6 +33,8 @@ spec:
         BACKEND_HOSTNAME: api.piped.fi
 
     backend:
+      podAnnotations:
+        configmap.reloader.stakater.com/reload: "piped-backend-config"
       initContainers:
         01-init-db:
           image: ghcr.io/onedr0p/postgres-init:14.9
