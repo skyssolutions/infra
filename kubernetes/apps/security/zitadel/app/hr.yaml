@@ -74,7 +74,7 @@ spec:
     replicaCount: 1
     image:
       repository: ghcr.io/zitadel/zitadel
-      tag: v2.39.3
+      tag: v2.40.0
       pullPolicy: IfNotPresent
 
     # Additional environment variables
