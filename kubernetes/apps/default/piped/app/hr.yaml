@@ -50,7 +50,7 @@ spec:
 
       config:
         PORT: 8080
-        NUM_WORKERS: 2
+        HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
         #DISABLE_REGISTRATION: true
         database:
