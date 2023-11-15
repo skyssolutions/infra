@@ -106,29 +106,29 @@ spec:
     portal:
       image:
         repository: ghcr.io/octohelm/harbor/harbor-portal
-        tag: v2.9.0
+        tag: v2.9.1
       revisionHistoryLimit: 3
     core:
       image:
         repository: ghcr.io/octohelm/harbor/harbor-core
-        tag: v2.9.0
+        tag: v2.9.1
       revisionHistoryLimit: 3
       podAnnotations:
         secret.reloader.stakater.com/reload: "harbor-secrets"
     jobservice:
       image:
         repository: ghcr.io/octohelm/harbor/harbor-jobservice
-        tag: v2.9.0
+        tag: v2.9.1
       revisionHistoryLimit: 3
     registry:
       registry:
         image:
           repository: ghcr.io/octohelm/harbor/registry-photon
-          tag: v2.9.0
+          tag: v2.9.1
       controller:
         image:
           repository: ghcr.io/octohelm/harbor/harbor-registryctl
-          tag: v2.9.0
+          tag: v2.9.1
       upload_purging:
         enabled: true
         # remove files in _upload directories which exist for a period of time, default is one week.
@@ -143,7 +143,7 @@ spec:
       enabled: true
       image:
         repository: ghcr.io/octohelm/harbor/trivy-adapter-photon
-        tag: v2.9.0
+        tag: v2.9.1
     notary:
       enabled: false
 
@@ -168,7 +168,7 @@ spec:
       internal:
         image:
           repository: ghcr.io/octohelm/harbor/redis-photon
-          tag: v2.9.0
+          tag: v2.9.1
       #external:
         # support redis, redis+sentinel
         # addr for redis: <host_redis>:<port_redis>
@@ -193,7 +193,7 @@ spec:
       revisionHistoryLimit: 3
       image:
         repository: ghcr.io/octohelm/harbor/harbor-exporter
-        tag: v2.9.0
+        tag: v2.9.1
     metrics:
       enabled: true
       core:
