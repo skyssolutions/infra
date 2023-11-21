@@ -16,6 +16,13 @@
       "matchUpdateTypes": ["minor", "patch", "digest"]
     },
     {
+      "description": "Auto merge minor and patch helm upgrades",
+      "matchDatasources": ["helm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["minor", "patch"]
+    ],
+    {
       "description": "Auto merge ansible role updates",
       "matchDatasources": ["galaxy-collection"],
       "automerge": true,
