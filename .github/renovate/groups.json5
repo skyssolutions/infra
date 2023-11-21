@@ -13,7 +13,7 @@
     {
       description: "app-Template Group",
       groupName: "app-template",
-      matchPackagePatterns: ["app-template"]
+      matchPackagePatterns: ["app-template"],
       matchDatasources": ["docker", "github-tags"],
       versioning: "semver",
       group: {commitMessageTopic: "{{{groupName}}}"},
