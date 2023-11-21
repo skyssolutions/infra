@@ -21,7 +21,7 @@
       "automerge": true,
       "automergeType": "branch",
       "matchUpdateTypes": ["minor", "patch"]
-    ],
+    },
     {
       "description": "Auto merge ansible role updates",
       "matchDatasources": ["galaxy-collection"],
