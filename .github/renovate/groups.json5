@@ -1,32 +1,37 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "packageRules": [
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  packageRules: [
     {
-      "description": "Flux Group",
-      "groupName": "Flux",
-      "matchPackagePatterns": ["flux"],
-      "matchDatasources": ["docker", "github-tags"],
-      "versioning": "semver",
-      "group": {
-        "commitMessageTopic": "{{{groupName}}} group"
-      },
-      "separateMinorPatch": true
+      description: "Flux Group",
+      groupName: "Flux",
+      matchPackagePatterns: ["flux"],
+      matchDatasources: ["docker", "github-tags"],
+      versioning: "semver",
+      group: {commitMessageTopic: "{{{groupName}}}"},
+      separateMinorPatch: true
     },
     {
-      "description": "Harbor Group",
-      "groupName": "Harbor",
-      "matchPackagePatterns": [
+      description: "app-Template Group",
+      groupName: "app-template",
+      matchPackagePatterns: ["app-template"]
+      matchDatasources": ["docker", "github-tags"],
+      versioning: "semver"
+      group: {commitMessageTopic: "{{{groupName}}}"},
+      separateMajorMinor: true
+    ],
+    {
+      description: "Harbor Group",
+      groupName: "Harbor",
+      matchPackagePatterns: [
         "ghcr.io/octohelm/harbor"
       ],
-      "matchDatasources": [
+      matchDatasources: [
         "docker",
         "github-tags"
       ],
-      "versioning": "semver",
-      "group": {
-        "commitMessageTopic": "{{{groupName}}} group"
-      },
-      "separateMinorPatch": true,
+      versioning: "semver",
+      group: {commitMessageTopic: "{{{groupName}}}"},
+      separateMinorPatch: true,
     }
   ]
 }
