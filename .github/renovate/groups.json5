@@ -14,11 +14,11 @@
       description: "app-Template Group",
       groupName: "app-template",
       matchPackagePatterns: ["app-template"],
-      matchDatasources": ["docker", "github-tags"],
+      matchDatasources: ["docker", "github-tags"],
       versioning: "semver",
       group: {commitMessageTopic: "{{{groupName}}}"},
       separateMajorMinor: true
-    ],
+    },
     {
       description: "Harbor Group",
       groupName: "Harbor",
