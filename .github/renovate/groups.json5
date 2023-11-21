@@ -15,7 +15,7 @@
       groupName: "app-template",
       matchPackagePatterns: ["app-template"]
       matchDatasources": ["docker", "github-tags"],
-      versioning: "semver"
+      versioning: "semver",
       group: {commitMessageTopic: "{{{groupName}}}"},
       separateMajorMinor: true
     ],
