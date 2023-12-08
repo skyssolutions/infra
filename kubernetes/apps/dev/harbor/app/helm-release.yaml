@@ -100,7 +100,7 @@ spec:
     updateStrategy:
       type: Recreate
     # debug, info, warning, error or fatal
-    logLevel: debug
+    logLevel: warning
     existingSecretSecretKey: "harbor-secrets"
 
     portal:
