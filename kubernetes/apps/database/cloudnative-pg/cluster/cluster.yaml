@@ -11,18 +11,24 @@ spec:
   storage:
     size: 10Gi
     storageClass: local-path
+  superuserSecret:
+    name: cloudnative-pg-secret
+  enableSuperuserAccess: true
   backup:
-    retentionPolicy: 30d
+    retentionPolicy: "30d"
     barmanObjectStore:
       wal:
         compression: bzip2
-        maxParallel: 8
-      destinationPath: s3://postgres-default-backup/
-      endpointURL: http://minio:9000
+        maxParallel: 4
+      data:
+        compression: bzip2
+      destinationPath: s3://oracle-cnpg/
+      endpointURL: http://s3.skym.fi
+      serverName: &currentCluster ostgres-default-v1
       s3Credentials:
         accessKeyId:
-          name: minio-secret
-          key: MINIO_ROOT_USER
+          name: cloudnative-pg-secret
+          key: aws-access-key-id
         secretAccessKey:
-          name: minio-secret
-          key: MINIO_ROOT_PASSWORD
+          name: cloudnative-pg-secret
+          key: aws-secret-access-key
