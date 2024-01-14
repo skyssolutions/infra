@@ -18,9 +18,9 @@ jobs:
         resource: ["helmrelease", "kustomization"]
     steps:
       - name: Setup Flux CLI
-        uses: fluxcd/flux2/action@5c5c15ea212b8f029a110f9975851d25c8272695 # v2.2.2
+        uses: fluxcd/flux2/action@v2.2.2
       - name: Diff Resources
-        uses: allenporter/flux-local/action/diff@e81a6055d4301683c6b356184e0a2e31a5952102 # 4.2.2
+        uses: allenporter/flux-local/action/diff@4.2.2
         id: diff
         with:
           sources: home-kubernetes
@@ -29,7 +29,7 @@ jobs:
 
       - if: ${{ steps.diff.outputs.diff != '' }}
         name: Add comment
-        uses: mshick/add-pr-comment@7c0890544fb33b0bdd2e59467fbacb62e028a096 # v2.8.1
+        uses: mshick/add-pr-comment@v2.8.1
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           message-id: "${{ github.event.pull_request.number }}/${{ matrix.path }}/${{ matrix.resource }}"
