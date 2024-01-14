@@ -13,6 +13,7 @@
     "github>samipsolutions/infra//.github/renovate/groups.json5",
     "github>samipsolutions/infra//.github/renovate/labels.json5",
     "github>samipsolutions/infra//.github/renovate/semanticCommits.json5",
+    "github>samipsolutions/infra//.github/renovate/disabled.json5"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
@@ -21,21 +22,6 @@
   "flux": {
     "fileMatch": [
       "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?(\\.j2)?$"
-    ]
-  },
-  "helm-values": {
-    "fileMatch": [
-      "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?(\\.j2)?$"
-    ]
-  },
-  "kubernetes": {
-    "fileMatch": [
-      "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?(\\.j2)?$"
-    ]
-  },
-  "kustomize": {
-    "fileMatch": [
-      "(^|/)kustomization\\.ya?ml(\\.j2)?$"
     ]
   },
   "regexManagers": [
