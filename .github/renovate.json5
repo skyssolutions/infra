@@ -6,7 +6,6 @@
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
-    ":automergeDigest",
     ":automergeBranch",
     "github>samipsolutions/infra//.github/renovate/autoMerge.json5",
     "github>samipsolutions/infra//.github/renovate/commitMessage.json5",

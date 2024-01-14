@@ -1,6 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "username": "samipsolutions-bot[bot]",
-  "gitAuthor": "samipsolutions-bot[bot] <118629685+samipsolutions-bot[bot]@users.noreply.github.com>",
-  "repositories": ["samipsolutions/infra"]
-}
