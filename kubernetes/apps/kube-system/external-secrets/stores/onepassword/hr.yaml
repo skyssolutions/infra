@@ -40,6 +40,7 @@ spec:
               OP_HTTP_PORT: &apiPort 80
               OP_BUS_PORT: 11220
               OP_BUS_PEERS: localhost:11221
+              OP_LOG_LEVEL: debug
               OP_SESSION:
                 valueFrom:
                   secretKeyRef:
@@ -81,6 +82,7 @@ spec:
               OP_HTTP_PORT: &syncPort 8081
               OP_BUS_PORT: 11221
               OP_BUS_PEERS: localhost:11220
+              OP_LOG_LEVEL: debug
               OP_SESSION:
                 valueFrom:
                   secretKeyRef:
