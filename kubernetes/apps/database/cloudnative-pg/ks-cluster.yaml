@@ -6,7 +6,6 @@ metadata:
 spec:
   dependsOn:
     - name: database-cloudnative-pg
-    - name: database-minio
   path: ./kubernetes/apps/database/cloudnative-pg/cluster
   prune: true
   sourceRef:
