@@ -80,6 +80,11 @@ spec:
     podSecurityContext:
       fsGroup: 1000
 
+    redis-cluster:
+      enabled: false
+    postgresql-ha:
+      enabled: false
+
     service:
       ssh:
         hostPort: 222
@@ -111,6 +116,7 @@ spec:
 
     persistence:
       enabled: true
+      claimName: data-forego-forgejo-0
       size: 20Gi
       accessModes:
         - ReadWriteOnce
