@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: database
 resources:
   - ./helm-release.yaml
-  - ./secret.sops.yaml
+  - ./external-secret.yaml

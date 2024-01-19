@@ -4,7 +4,7 @@ namespace: default
 resources:
   - ./pvc.yaml
   - ./pvc-addons.yaml
-  - ./secret.sops.yaml
+  - ./external-secret.yaml
   - ./helm-release.yaml
 configMapGenerator:
   - name: odoo-configmap
