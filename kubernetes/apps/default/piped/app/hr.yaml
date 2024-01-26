@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: piped
-      version: 4.1.2
+      version: 5.0.0
       sourceRef:
         kind: HelmRepository
         name: piped
@@ -55,7 +55,10 @@ spec:
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
-          secret: *secret
+          secret:
+           name: *secret
+           username: DB_USERNAME
+           password: DB_PASSWORD
 
     ytproxy:
       image:
