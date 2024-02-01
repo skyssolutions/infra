@@ -29,7 +29,7 @@ jobs:
 
       - if: ${{ steps.diff.outputs.diff != '' }}
         name: Add comment
-        uses: mshick/add-pr-comment@v2.8.1
+        uses: mshick/add-pr-comment@v2.8.2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           message-id: "${{ github.event.pull_request.number }}/${{ matrix.path }}/${{ matrix.resource }}"
