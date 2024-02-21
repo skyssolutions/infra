@@ -18,6 +18,11 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "rebaseWhen": "conflicted",
+  "kubernetes": {
+    "fileMatch": [
+      "(^|/)kubernetes/.+\\.yaml$"
+    ]
+  },
   "flux": {
     "fileMatch": [
       "(^|/)kubernetes/.+\\.ya?ml(\\.j2)?(\\.j2)?$"
