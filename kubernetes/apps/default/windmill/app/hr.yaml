@@ -33,9 +33,27 @@ spec:
       baseDomain: &host wind.samipsolutions.fi
       baseProtocol: https
       appReplicas: 1
-      workerReplicas: 1
       lspReplicas: 1
       multiplayerReplicas: 1
+      workerGroups:
+        - name: "default"
+          replicas: 2
+          resources:
+            requests:
+              memory: "1028Mi"
+              cpu: "500m"
+            limits:
+              memory: "2048Mi"
+              cpu: "1000m"
+        - name: "native"
+          replicas: 1
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
     ingress:
       enabled: true
       className: nginx
