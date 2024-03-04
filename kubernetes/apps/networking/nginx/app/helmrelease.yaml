@@ -30,7 +30,7 @@ spec:
       allowSnippetAnnotations: true
       service:
         type: ClusterIP
-        ipFamilyPolicy: RequireDualStack
+        ipFamilyPolicy: SingleStack
       publishService:
         enabled: false
       hostPort:
