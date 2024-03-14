@@ -29,6 +29,7 @@ env:
   WORKFLOW_RENOVATE_DRY_RUN: false
   WORKFLOW_RENOVATE_LOG_LEVEL: debug
   WORKFLOW_RENOVATE_VERSION: latest
+  RENOVATE_REPOSITORIES: "samipsolutions/infra"
 
 
 jobs:
