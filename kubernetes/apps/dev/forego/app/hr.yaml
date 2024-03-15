@@ -37,6 +37,8 @@ spec:
         security:
           PASSWORD_COMPLEXITY: "lower,upper"
           MIN_PASSWORD_LENGTH: 12
+          REVERSE_PROXY_LIMIT: 1
+          REVERSE_PROXY_TRUSTED_PROXIES: 10.50.0.0/24
         server:
           SSH_PORT: 222
         service:
