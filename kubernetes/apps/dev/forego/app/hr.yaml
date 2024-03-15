@@ -70,7 +70,8 @@ spec:
         indexer:
           REPO_INDEXER_ENABLED: true
           REPO_INDEXER_REPO_TYPES: sources
-
+    strategy:
+      type: 'Recreate'
     image:
       registry: "codeberg.org"
       repository: forgejo/forgejo
