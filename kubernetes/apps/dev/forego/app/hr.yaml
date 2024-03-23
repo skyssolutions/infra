@@ -77,7 +77,7 @@ spec:
     image:
       registry: "codeberg.org"
       repository: forgejo/forgejo
-      tag: "1.21.7-0"
+      tag: "1.21.8-0"
       rootless: true
 
     podSecurityContext:
