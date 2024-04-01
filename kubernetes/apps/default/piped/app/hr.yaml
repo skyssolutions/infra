@@ -64,7 +64,7 @@ spec:
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/docker/1337kavin/piped-proxy
-        tag: latest@sha256:0f0bcb55933165d1dcdb487e91f972fe55f24f3294d14884824f482a947219f0
+        tag: latest@sha256:6bcaad44c5c7112625e21792d49ed7afc364a5460f266d80fe6c65c001bddc03
         pullPolicy: Always
 
     ingress:
