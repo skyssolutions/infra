@@ -47,26 +47,16 @@ spec:
           image: registry.samipsolutions.fi/docker/qmcgaw/gluetun:v3.38.0
           imagePullPolicy: IfNotPresent
           env:
-            - name: VPN_TYPE
-              value: wireguard
-            - name: VPN_SERVICE_PROVIDER
-              value: airvpn
-            - name: VPN_INTERFACE
-              value: wg0
-            - name: FIREWALL
-              value: "off"
-            - name: DOT
-              value: "off"
-            - name: FIREWALL_VPN_INPUT_PORTS
-              value: 51820,55633
-            - name: SERVER_REGIONS
-              value: Europe
-            - NAME: HTTPPROXY
-              value: "on"
-            - name: HTTPPROXY_LISTENING_ADDRESS
-              value: ":8888"
-            - name: HTTPPROXY_STEALTH
-              value: "on"
+            VPN_TYPE: wireguard
+            VPN_SERVICE_PROVIDER: airvpn
+            VPN_INTERFACE: wg0
+            FIREWALL: "off"
+            DOT: "off"
+            FIREWALL_VPN_INPUT_PORTS: 51820,55633
+            SERVER_REGIONS: Europe
+            HTTPPROXY: "on"
+            HTTPPROXY_LISTENING_ADDRESS: ":8888"
+            HTTPPROXY_STEALTH: "on"
           envFrom:
             - secretRef:
                 name: piped-vpnconfig
