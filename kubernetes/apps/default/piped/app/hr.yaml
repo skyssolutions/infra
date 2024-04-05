@@ -45,7 +45,7 @@ spec:
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/docker/1337kavin/piped
-        tag: latest
+        tag: latest@sha256:7cc65937551ed50c3f4b999b970997edf1dc7ad05570b2e5062d629620bac5bf
         pullPolicy: Always
 
       config:
@@ -61,6 +61,7 @@ spec:
            password: DB_PASSWORD
 
     ytproxy:
+      enabled: false
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/docker/1337kavin/piped-proxy
