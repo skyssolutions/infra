@@ -5,8 +5,6 @@ metadata:
   name: security-zitadel
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: system-doppler-secret
   path: ./kubernetes/apps/security/zitadel/app
   prune: true
   sourceRef:
