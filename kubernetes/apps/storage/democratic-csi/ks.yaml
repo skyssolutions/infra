@@ -4,6 +4,8 @@ kind: Kustomization
 metadata:
   name: storage-democratic-csi
   namespace: flux-system
+  labels:
+    substitution.flux.home.arpa/disabled: "true"
 spec:
   dependsOn:
     - name: storage-snapshot-controller
