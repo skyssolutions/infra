@@ -71,13 +71,13 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN}"
         hosts:
-          - host: pgadmin.${SECRET_DOMAIN}
+          - host: pgadmin.${SECRET_DOMAIN_3}
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - pgadmin.${SECRET_DOMAIN}
+              - pgadmin.${SECRET_DOMAIN_3}
 
     resources:
       requests:
