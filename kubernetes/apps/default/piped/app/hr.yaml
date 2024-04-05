@@ -52,7 +52,9 @@ spec:
             VPN_INTERFACE: wg0
             FIREWALL: "off"
             DOT: "off"
-            FIREWALL_VPN_INPUT_PORTS: 51820,55633
+            FIREWALL_VPN_INPUT_PORTS: 51820
+            FIREWALL_OUTBOUND_SUBNETS: 10.51.0.0/16,10.50.0.0/16
+            DNS_KEEP_NAMESERVER: "on"
             SERVER_REGIONS: Europe
             HTTPPROXY: "on"
             HTTPPROXY_LISTENING_ADDRESS: ":8888"
