@@ -35,9 +35,7 @@ spec:
     strategy:
       type: Recreate
 
-    envFrom:
-      - secretRef:
-          name: pgadmin-secret
+
     service:
       main:
         ports:
