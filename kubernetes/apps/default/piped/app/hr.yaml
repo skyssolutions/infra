@@ -42,6 +42,38 @@ spec:
           envFrom:
             - secretRef:
                 name: &secret piped-db-creds
+      additionalContainers:
+        gluetun:
+          image: registry.samipsolutions.fi/docker/qmcgaw/gluetun:v3.38.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VPN_TYPE
+              value: wireguard
+            - name: VPN_SERVICE_PROVIDER
+              value: airvpn
+            - name: VPN_INTERFACE
+              value: wg0
+            - name: FIREWALL
+              value: "off"
+            - name: DOT
+              value: "off"
+            - name: FIREWALL_VPN_INPUT_PORTS
+              value: 51820,55633
+            - name: SERVER_REGIONS
+              value: Europe
+            - NAME: HTTPPROXY
+              value: "on"
+            - name: HTTPPROXY_LISTENING_ADDRESS
+              value: ":8888"
+            - name: HTTPPROXY_STEALTH
+              value: "on"
+          envFrom:
+            - secretRef:
+                name: piped-vpnconfig
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/library/piped
@@ -52,6 +84,7 @@ spec:
         PORT: 8080
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
+        HTTP_PROXY: 127.0.0.1:8888
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
