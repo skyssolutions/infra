@@ -66,6 +66,8 @@ spec:
         repository: registry.samipsolutions.fi/docker/1337kavin/piped-proxy
         tag: latest@sha256:6bcaad44c5c7112625e21792d49ed7afc364a5460f266d80fe6c65c001bddc03
         pullPolicy: Always
+      env:
+        RUST_BACKTRACE: 1
 
     ingress:
       main:
