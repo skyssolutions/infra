@@ -5,5 +5,5 @@ resources:
   - ./ns.yaml
   - ./cloudnative-pg/ks.yaml
   - ./cloudnative-pg/ks-cluster.yaml
-  - ./pgadmin/ks.yaml
+#   - ./pgadmin/ks.yaml
   - ./redis/ks.yaml
