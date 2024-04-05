@@ -120,7 +120,7 @@ spec:
     persistence:
       enabled: true
       claimName: data-forego-forgejo-0
-      size: 20Gi
+      size: 40Gi
       accessModes:
         - ReadWriteOnce
 
