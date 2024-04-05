@@ -45,7 +45,7 @@ spec:
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/library/piped
-        tag: 1.9
+        tag: "1.9"
         pullPolicy: Always
 
       config:
