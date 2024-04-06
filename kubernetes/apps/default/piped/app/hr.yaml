@@ -67,9 +67,8 @@ spec:
               add:
                 - NET_ADMIN
       image:
-        # Pull-though cache
         repository: registry.samipsolutions.fi/library/piped
-        tag: "1.9"
+        tag: "2024-04-06-2de41b6"
         pullPolicy: Always
 
       config:
