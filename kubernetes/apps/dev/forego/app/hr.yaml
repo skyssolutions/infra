@@ -122,6 +122,7 @@ spec:
     persistence:
       enabled: true
       claimName: ${VOLSYNC_CLAIM}
+      size: ${VOLSYNC_CAPACITY}
 
   valuesFrom:
     - targetPath: gitea.admin.email
