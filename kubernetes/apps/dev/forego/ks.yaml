@@ -16,5 +16,6 @@ spec:
   postBuild:
     substitute:
       APP: forego
-      VOLSYNC_CAPACITY: 45Gi
+      VOLSYNC_CLAIM: forego-data
+      VOLSYNC_CAPACITY: 20Gi
 
