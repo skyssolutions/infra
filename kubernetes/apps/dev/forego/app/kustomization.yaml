@@ -4,3 +4,4 @@ namespace: dev
 resources:
   - ./externalsecret.yaml
   - ./hr.yaml
+  - ../../../../templates/volsync-r2
