@@ -21,4 +21,17 @@ spec:
       VOLSYNC_CAPACITY: 20Gi
       APP_UID: "1000"
       APP_GID: "1000"
+  patches:
+    - patch: |-
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: not-used
+        spec:
+          template:
+            metadata:
+              name: forego
+      target:
+        kind: Deployment
+        name: forego-forgejo
 
