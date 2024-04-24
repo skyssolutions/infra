@@ -81,8 +81,9 @@ spec:
       tag: "7.0.0"
       rootless: false
 
-    podSecurityContext:
-      fsGroup: 1000
+    #podSecurityContext:
+    #  runAsUser:
+    #  fsGroup: 1000
 
     redis-cluster:
       enabled: false
