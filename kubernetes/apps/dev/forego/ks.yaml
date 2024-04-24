@@ -33,5 +33,4 @@ spec:
               name: forego
       target:
         kind: Deployment
-        name: forego-forgejo
 
