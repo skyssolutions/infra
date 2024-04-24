@@ -5,6 +5,7 @@ metadata:
   name: dev-forego
   namespace: flux-system
 spec:
+  targetNamespace: dev
   path: ./kubernetes/apps/dev/forego/app
   prune: true
   sourceRef:
