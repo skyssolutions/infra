@@ -19,4 +19,6 @@ spec:
       APP: forego
       VOLSYNC_CLAIM: forego-data
       VOLSYNC_CAPACITY: 20Gi
+      APP_UID: "1000"
+      APP_GID: "1000"
 
