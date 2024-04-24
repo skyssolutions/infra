@@ -79,11 +79,12 @@ spec:
       registry: "codeberg.org"
       repository: forgejo/forgejo
       tag: "7.0.0"
-      rootless: false
+      rootless: true
 
-    #podSecurityContext:
-    #  runAsUser:
-    #  fsGroup: 1000
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
 
     redis-cluster:
       enabled: false
