@@ -5,6 +5,7 @@ namespace: dev
 resources:
   - ./helm-release.yaml
   - ./secret.sops.yaml
+  - ./manual-ingress.yaml
   - ./pvc/registry.yaml
   - ./pvc/jobservice.yaml
   - ./pvc/jobservice-scandata.yaml
