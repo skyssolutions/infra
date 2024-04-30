@@ -74,4 +74,3 @@ spec:
   tls:
     - hosts:
         - registry.${SECRET_DOMAIN_2}
-      secretName: harbor-tls
