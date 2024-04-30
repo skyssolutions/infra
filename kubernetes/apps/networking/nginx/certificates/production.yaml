@@ -22,6 +22,7 @@ metadata:
 spec:
   issuerRef:
     name: letsencrypt-production
+    kind: ClusterIssuer
   secretName: harbor-tls
   commonName: "registry.${SECRET_DOMAIN_2}"
   dnsNames:
