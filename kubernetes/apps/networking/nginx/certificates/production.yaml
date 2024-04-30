@@ -17,6 +17,25 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
+  name: "harbor-production"
+  namespace: networking
+spec:
+  issuerRef:
+    name: letsencrypt-production
+  secretName: harbor-tls
+  commonName: "registry.${SECRET_DOMAIN_2}"
+  dnsNames:
+    - "registry.${SECRET_DOMAIN_2}"
+    - "registry.${SECRET_DOMAIN}"
+  secretTemplate:
+    annotations:
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true"
+      reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "dev"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
   name: "piped-production"
   namespace: networking
 spec:
