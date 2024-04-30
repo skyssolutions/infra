@@ -23,12 +23,12 @@ spec:
     remediation:
       retries: 3
   values:
-    nameOverride: forego
+    nameOverride: forgejo
     gitea:
       admin:
         username: kryptonian
       config:
-        APP_NAME: 'Forego'
+        APP_NAME: 'Forgejo'
 
         repository:
           DEFAULT_BRANCH: main
