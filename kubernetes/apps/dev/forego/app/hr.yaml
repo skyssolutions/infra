@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: forgejo
-      version: 6.0.5
+      version: 6.0.6
       sourceRef:
         kind: HelmRepository
         name: forego-helm
