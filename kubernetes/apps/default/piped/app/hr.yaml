@@ -86,7 +86,7 @@ spec:
            password: DB_PASSWORD
 
     ytproxy:
-      enabled: false
+      enabled: true
       image:
         # Pull-though cache
         repository: registry.samipsolutions.fi/docker.io/1337kavin/piped-proxy
@@ -124,7 +124,7 @@ spec:
 
 
       ytproxy:
-        enabled: false
+        enabled: true
         ingressClassName: nginx
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
