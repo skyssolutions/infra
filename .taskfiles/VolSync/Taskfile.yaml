@@ -28,8 +28,16 @@ tasks:
     desc: Suspends Volsync
     cmds:
       - flux suspend ks volsync
-      - flux suspend hr -n volsync-system volsync
-      - kubectl -n volsync-system scale deployment volsync --replicas 0
+      - flux suspend hr -n volsync volsync
+      - kubectl -n volsync scale deployment volsync --replicas 0
+    env: *env
+
+  resume-controller:
+    desc: Resumes Volsync
+    cmds:
+      - flux resume ks volsync
+      - flux resume hr -n volsync volsync
+      - kubectl -n volsync scale deployment volsync --replicas 1
     env: *env
 
   list:
