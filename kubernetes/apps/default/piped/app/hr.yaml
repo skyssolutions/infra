@@ -25,7 +25,7 @@ spec:
     frontend:
       image:
         # Pull-though cache
-        repository: registry.samipsolutions.fi/docker/1337kavin/piped-frontend
+        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped-frontend
         tag: latest
         pullPolicy: Always
 
@@ -44,7 +44,7 @@ spec:
                 name: &secret piped-db-creds
       additionalContainers:
         gluetun:
-          image: registry.samipsolutions.fi/docker/qmcgaw/gluetun:v3.38.0
+          image: registry.samipsolutions.fi/docker.io/qmcgaw/gluetun:v3.38.0
           imagePullPolicy: IfNotPresent
           env:
             VPN_TYPE: wireguard
@@ -76,6 +76,7 @@ spec:
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
         HTTP_PROXY: 127.0.0.1:8888
+        REQWEST_PROXY: http://127.0.0.1:8888
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
@@ -88,7 +89,7 @@ spec:
       enabled: false
       image:
         # Pull-though cache
-        repository: registry.samipsolutions.fi/docker/1337kavin/piped-proxy
+        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped-proxy
         tag: latest@sha256:5e8a6898a12b35edd2483e82b50eee59ff9d0930b3c85c9f0ba61a15b3ff3693
         pullPolicy: Always
       env:
