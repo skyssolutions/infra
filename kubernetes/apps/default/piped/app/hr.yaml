@@ -67,8 +67,10 @@ spec:
               add:
                 - NET_ADMIN
       image:
-        repository: registry.samipsolutions.fi/library/piped
-        tag: "2024-04-06-2de41b6"
+        #repository: registry.samipsolutions.fi/library/piped
+        #tag: "2024-04-06-2de41b6"
+        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped
+        tag: latest@sha256:0c5eb72933e5204b3559f11bc094d5aa2209b61561d3e8793ae3142ab617767f
         pullPolicy: Always
 
       config:
