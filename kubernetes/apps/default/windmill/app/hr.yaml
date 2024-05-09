@@ -30,7 +30,7 @@ spec:
     windmill:
       # renovate: datasource=docker depName=ghcr.io/windmill-labs/windmill
       tag: "1.323.6"
-      baseDomain: &host wind.samipsolutions.fi
+      baseDomain: &host wind.skysolutions.fi
       baseProtocol: https
       appReplicas: 1
       lspReplicas: 1
@@ -59,7 +59,7 @@ spec:
       className: nginx
       annotations:
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-        external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
+        external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN_2}"
       tls:
         - hosts:
             - *host
