@@ -74,4 +74,4 @@ spec:
   tls:
     - hosts:
         - registry.${SECRET_DOMAIN}
-      secretName: "harbor-tls"
+      secretName: "samipsolutions-fi-production-tls"
