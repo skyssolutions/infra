@@ -27,6 +27,8 @@ spec:
   values:
     controller:
       replicaCount: 1
+      updateStrategy:
+       type: Recreate
       allowSnippetAnnotations: true
       service:
         type: ClusterIP
