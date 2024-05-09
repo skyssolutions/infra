@@ -4,4 +4,5 @@ namespace: dev
 resources:
   - ./externalsecret.yaml
   - ./hr.yaml
+  - ./manual-redirect-ingress.yaml
   - ../../../../templates/volsync-r2

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: forego-redirect
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: git.skysolutions.fi/$1
+    external-dns.alpha.kubernetes.io/target: ingress.skysolutions.fi
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: &host git.samipsolutions.fi
+      http:
+        paths:
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: forego-http
+                port:
+                  number: 3000
+  tls:
+    - hosts:
+        - *host
