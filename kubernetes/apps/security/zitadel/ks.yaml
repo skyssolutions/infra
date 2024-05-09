@@ -5,6 +5,7 @@ metadata:
   name: security-zitadel
   namespace: flux-system
 spec:
+  targetNamespace: security
   path: ./kubernetes/apps/security/zitadel/app
   prune: true
   sourceRef:
