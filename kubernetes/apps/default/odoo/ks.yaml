@@ -20,3 +20,10 @@ spec:
   interval: 30m
   retryInterval: 1m
   timeout: 3m
+  postBuild:
+    substitute:
+      APP: odoo
+      VOLSYNC_CLAIM: odoo-data
+      VOLSYNC_CAPACITY: 5Gi
+      APP_UID: "568"
+      APP_GID: "568"

@@ -71,7 +71,7 @@ spec:
       - name: zfs
         defaultClass: true
         reclaimPolicy: Delete
-        volumeBindingMode: WaitForFirstConsumer
+        volumeBindingMode: Immediate
         allowVolumeExpansion: true
         parameters:
           fsType: zfs
