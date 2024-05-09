@@ -15,6 +15,3 @@ spec:
         name: emberstack
         namespace: flux-system
       interval: 5m
-  values:
-    configuration:
-      logging: Debugging
