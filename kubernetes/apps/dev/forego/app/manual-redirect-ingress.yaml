@@ -4,7 +4,7 @@ metadata:
   name: forego-redirect
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: git.skysolutions.fi/$1
+    nginx.ingress.kubernetes.io/permanent-redirect: https://git.skysolutions.fi/$1
     external-dns.alpha.kubernetes.io/target: ingress.skysolutions.fi
 spec:
   ingressClassName: nginx
@@ -12,7 +12,7 @@ spec:
     - host: &host git.samipsolutions.fi
       http:
         paths:
-          - path: /
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
