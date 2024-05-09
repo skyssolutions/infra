@@ -34,7 +34,7 @@ spec:
           secretName: "harbor-tls"
       ingress:
         hosts:
-          core: registry.${SECRET_DOMAIN}
+          core: registry.${SECRET_DOMAIN_2}
         controller: default
         className: "nginx"
         annotations:
@@ -47,7 +47,7 @@ spec:
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
           nginx.ingress.kubernetes.io/custom-http-errors: "418"
           nginx.ingress.kubernetes.io/proxy-connect-timeout: "480"
-    externalURL: https://registry.${SECRET_DOMAIN}
+    externalURL: https://registry.${SECRET_DOMAIN_2}
     ipFamily:
       ipv6:
         enabled: true
