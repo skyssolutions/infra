@@ -51,14 +51,20 @@ spec:
           - --leader-election=false
           - --node-deployment=true
 
+      driver:
+        imagePullPolicy: Always
+        logLevel: debug
+    node:
+      driver:
+        imagePullPolicy: Always
+        logLevel: debug
+
     csiDriver:
       name: "org.democratic-csi.zfs-local-dataset"
       storageCapacity: false
       fsGroupPolicy: File
 
     driver:
-      imagePullPolicy: Always
-      logLevel: debug
       config:
         driver: zfs-local-dataset
 
