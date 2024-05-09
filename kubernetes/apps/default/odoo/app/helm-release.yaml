@@ -48,9 +48,14 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: "${SECRET_DOMAIN_2}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - *host
+              - ${SECRET_DOMAIN_2}
     envFrom:
       - secretRef:
           name: odoo-secrets
