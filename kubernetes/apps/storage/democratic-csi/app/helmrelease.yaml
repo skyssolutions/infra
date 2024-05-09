@@ -57,6 +57,8 @@ spec:
       fsGroupPolicy: File
 
     driver:
+      imagePullPolicy: Always
+      logLevel: debug
       config:
         driver: zfs-local-dataset
 
