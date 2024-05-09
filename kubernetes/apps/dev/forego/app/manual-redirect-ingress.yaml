@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: forego-redirect
   annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: git.skysolutions.fi/$1
     external-dns.alpha.kubernetes.io/target: ingress.skysolutions.fi
 spec:
