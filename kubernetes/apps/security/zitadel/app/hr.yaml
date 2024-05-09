@@ -51,7 +51,7 @@ spec:
             Stdout:
               Enabled: false
 
-        ExternalDomain: &host auth.${SECRET_DOMAIN_2}
+        ExternalDomain: &host auth.${SECRET_DOMAIN}
         # specifies if ZITADEL is exposed externally through TLS
         # this must be set to true even if TLS is not enabled on ZITADEL itself
         # but TLS traffic is terminated on a reverse proxy
