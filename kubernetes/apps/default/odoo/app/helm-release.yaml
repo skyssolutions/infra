@@ -30,7 +30,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: registry.skysolutions.fi/docker.io/odoo
-      tag: "16.0"
+      tag: "17.0"
       pullPolicy: Always
     service:
       main:
@@ -67,7 +67,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingCLaim: odoo-config-v1
+        existingCLaim: odoo-config-v2
         mountPath: /var/lib/odoo
       etc-config-file:
         enabled: true
