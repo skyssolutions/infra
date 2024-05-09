@@ -12,7 +12,7 @@ spec:
     - host: &host git.samipsolutions.fi
       http:
         paths:
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
