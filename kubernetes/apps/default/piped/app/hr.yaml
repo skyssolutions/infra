@@ -78,7 +78,7 @@ spec:
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
         HTTP_PROXY: 127.0.0.1:8888
-        REQWEST_PROXY: http://127.0.0.1:8888
+        #REQWEST_PROXY: http://127.0.0.1:8888
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
