@@ -25,7 +25,7 @@ spec:
     frontend:
       image:
         # Pull-though cache
-        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped-frontend
+        repository: registry.skysolutions.fi/docker.io/1337kavin/piped-frontend
         tag: latest
         pullPolicy: Always
 
@@ -44,7 +44,7 @@ spec:
                 name: &secret piped-db-creds
       additionalContainers:
         gluetun:
-          image: registry.samipsolutions.fi/docker.io/qmcgaw/gluetun:v3.38.0
+          image: registry.skysolutions.fi/docker.io/qmcgaw/gluetun:v3.38.0
           imagePullPolicy: IfNotPresent
           env:
             VPN_TYPE: wireguard
@@ -67,9 +67,9 @@ spec:
               add:
                 - NET_ADMIN
       image:
-        #repository: registry.samipsolutions.fi/library/piped
+        #repository: registry.skysolutions.fi/library/piped
         #tag: "2024-04-06-2de41b6"
-        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped
+        repository: registry.skysolutions.fi/docker.io/1337kavin/piped
         tag: latest@sha256:0c5eb72933e5204b3559f11bc094d5aa2209b61561d3e8793ae3142ab617767f
         pullPolicy: Always
 
@@ -91,7 +91,7 @@ spec:
       enabled: true
       image:
         # Pull-though cache
-        repository: registry.samipsolutions.fi/docker.io/1337kavin/piped-proxy
+        repository: registry.skysolutions.fi/docker.io/1337kavin/piped-proxy
         tag: latest@sha256:5e8a6898a12b35edd2483e82b50eee59ff9d0930b3c85c9f0ba61a15b3ff3693
         pullPolicy: Always
       env:
