@@ -24,7 +24,7 @@ spec:
         compression: bzip2
       destinationPath: s3://oracle-cnpg/
       endpointURL: http://s3.skym.fi
-      serverName: &currentCluster ostgres-default-v1
+      serverName: &currentCluster postgres-default-v1
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
