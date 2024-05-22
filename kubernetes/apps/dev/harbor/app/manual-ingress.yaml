@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-    external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN}
+    external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN_2}
     ingress.kubernetes.io/proxy-body-size: "0"
     ingress.kubernetes.io/ssl-redirect: "true"
     meta.helm.sh/release-name: harbor

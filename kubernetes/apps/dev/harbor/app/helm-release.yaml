@@ -44,7 +44,7 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-production
           # Remember to NOT use CF proxying due to 100M upload limit though it
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-          external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN_2}"
           nginx.ingress.kubernetes.io/custom-http-errors: "418"
           nginx.ingress.kubernetes.io/proxy-connect-timeout: "480"
     externalURL: https://registry.${SECRET_DOMAIN_2}
