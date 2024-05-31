@@ -76,7 +76,7 @@ spec:
     strategy:
       type: 'Recreate'
     image:
-      registry: "codeberg.org"
+      registry: "code.forgejo.org"
       repository: forgejo/forgejo
       tag: "7.0.3"
       rootless: true
