@@ -92,7 +92,7 @@ spec:
       image:
         # Pull-though cache
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped-proxy
-        tag: latest@sha256:0dd9808eeab5a6a4685b86abeceb8fb60c7a0e8213e558de8fd1da73a980f7a1
+        tag: latest@sha256:841e23beff040962378c97079d03cfcf552323bad5bdc5b18b847db23a07b66b
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
