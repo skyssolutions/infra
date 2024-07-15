@@ -12,6 +12,7 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "rebaseWhen": "conflicted",
+  "minimumReleaseAge": "5 days",
   "flux": {
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
   },

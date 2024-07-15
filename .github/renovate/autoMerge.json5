@@ -26,6 +26,26 @@
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
+      "description": "Auto merge windmill container",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["ghcr.io/windmill-labs/windmill"],
+      "automergeSchedule": "every two weeks on monday"
+    },
+    {
+      "description": "Auto merge minor and patch helm upgrades",
+      "matchDatasources": ["helm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["windmill"],
+      "automergeSchedule": "every two weeks on monday"
+    },
+    {
       "description": "Auto merge ansible role updates",
       "matchDatasources": ["galaxy-collection"],
       "automerge": true,
