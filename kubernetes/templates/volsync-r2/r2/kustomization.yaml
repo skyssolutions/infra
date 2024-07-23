@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./external-secret.yaml
   - ./replicationdestination.yaml
-  - ./replicationsource.yaml
+ # - ./replicationsource.yaml
