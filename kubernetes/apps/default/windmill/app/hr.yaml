@@ -35,6 +35,12 @@ spec:
       appReplicas: 1
       lspReplicas: 1
       multiplayerReplicas: 1
+      app:
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 2Gi
       workerGroups:
         - name: "default"
           replicas: 2
