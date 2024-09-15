@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: piped
-      version: 6.0.1
+      version: 6.0.2
       sourceRef:
         kind: HelmRepository
         name: piped
@@ -92,7 +92,7 @@ spec:
       image:
         # Pull-though cache
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped-proxy
-        tag: latest@sha256:3f71c7976dbbf498469ecd2ace6b67a68591ac898f128169a0163d6f3604d1f2
+        tag: latest@sha256:0bb7cd3057801577b79bbd9cfb3de7cb5b5c93f74cf636266aec8a69d1b177ab
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
