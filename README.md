@@ -1,4 +1,4 @@
-This is an production single-node k3s cluster running at Oracle Cloud using their free tier Ampere instances.
+This is a production single-node k3s cluster running at Oracle Cloud using their free tier Ampere instances.
 
 ### :wrench:&nbsp; Tools
 
