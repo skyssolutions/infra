@@ -18,7 +18,7 @@ jobs:
         resource: ["helmrelease", "kustomization"]
     steps:
       - name: Setup Flux CLI
-        uses: fluxcd/flux2/action@v2.3.0
+        uses: fluxcd/flux2/action@v2.4.0
       - name: Diff Resources
         uses: allenporter/flux-local/action/diff@5.5.1
         id: diff
