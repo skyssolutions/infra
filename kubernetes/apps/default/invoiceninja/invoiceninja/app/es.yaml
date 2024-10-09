@@ -1,0 +1,25 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/external-secrets.io/externalsecret_v1beta1.json
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: invoiceninja
+spec:
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: onepassword-connect
+  target:
+    name: invoiceninja-secret
+    creationPolicy: Owner
+    template:
+      engineVersion: v2
+      data:
+        APP_KEY: "{{ .APP_KEY }}"
+        IN_PASSWORD: "{{ .IN_PASSWORD }}"
+        mariadb-root-password: "{{ .mariadb_root_password }}"
+        mariadb-replication-password: "{{ .mariadb_replication_password }}"
+        mariadb-password: "{{ .mariadb_password }}"
+  dataFrom:
+    - extract:
+        key: invoiceninja
+

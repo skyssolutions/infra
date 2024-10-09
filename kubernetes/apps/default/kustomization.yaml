@@ -7,3 +7,4 @@ resources:
   - ./windmill/ks.yaml
   - ./smtp-relay/ks.yaml
   - ./piped/ks.yaml
+  - ./invoiceninja

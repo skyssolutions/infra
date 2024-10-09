@@ -16,6 +16,7 @@ resources:
   - ./hajimari.yaml
   - ./harbor.yaml
   - ./ingress-nginx.yaml
+  - ./invoiceninja-release.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
   - ./kubernetes-dashboard.yaml
