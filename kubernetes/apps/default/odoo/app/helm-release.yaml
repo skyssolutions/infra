@@ -29,8 +29,8 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: registry.skysolutions.fi/docker.io/odoo
-      tag: "17.0"
+      repository: odoo
+      tag: "17.0-20241007"
       pullPolicy: Always
     service:
       main:
