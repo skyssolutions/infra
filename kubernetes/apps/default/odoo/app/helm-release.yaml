@@ -30,7 +30,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: odoo
-      tag: "17.0-20241007"
+      tag: "18.0-20241007"
       pullPolicy: Always
     service:
       main:
