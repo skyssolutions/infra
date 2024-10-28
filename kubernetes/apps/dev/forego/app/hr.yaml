@@ -78,7 +78,7 @@ spec:
     image:
       registry: "code.forgejo.org"
       repository: forgejo/forgejo
-      tag: "9.0.0"
+      tag: "9.0.1"
       rootless: true
 
     podSecurityContext:
