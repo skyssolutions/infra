@@ -43,25 +43,9 @@ spec:
             - secretRef:
                 name: &secret piped-db-creds
       additionalContainers:
-        gluetun:
-          image: registry.skysolutions.fi/docker.io/qmcgaw/gluetun:v3.39.1
+        warp:
+          image: registry.skysolutions.fi/library/warp-sock5:30102024
           imagePullPolicy: IfNotPresent
-          env:
-            VPN_TYPE: wireguard
-            VPN_SERVICE_PROVIDER: airvpn
-            VPN_INTERFACE: wg0
-            FIREWALL: "off"
-            DOT: "off"
-            FIREWALL_VPN_INPUT_PORTS: 51820
-            FIREWALL_OUTBOUND_SUBNETS: 10.51.0.0/16,10.50.0.0/16
-            DNS_KEEP_NAMESERVER: "on"
-            SERVER_REGIONS: Europe
-            HTTPPROXY: "on"
-            HTTPPROXY_LISTENING_ADDRESS: ":8888"
-            HTTPPROXY_STEALTH: "on"
-          envFrom:
-            - secretRef:
-                name: piped-vpnconfig
           securityContext:
             capabilities:
               add:
@@ -77,8 +61,8 @@ spec:
         PORT: 8080
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
-        HTTP_PROXY: 127.0.0.1:8888
-        #REQWEST_PROXY: http://127.0.0.1:8888
+        #HTTP_PROXY: 127.0.0.1:8888
+        REQWEST_PROXY: socks5://127.0.0.1:40000
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
@@ -96,6 +80,15 @@ spec:
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
+      additionalContainers:
+        warp:
+          image: registry.skysolutions.fi/library/warp-sock5:30102024
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+
 
     ingress:
       main:
