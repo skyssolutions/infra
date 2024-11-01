@@ -80,6 +80,7 @@ spec:
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
+        PROXY: socks5://127.0.0.1:40000
       additionalContainers:
         warp:
           image: registry.skysolutions.fi/library/warp-sock5:30102024
