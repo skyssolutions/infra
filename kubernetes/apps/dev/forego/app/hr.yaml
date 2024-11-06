@@ -116,9 +116,9 @@ spec:
 
     resources:
       requests:
-        memory: 128Mi
-      limits:
         memory: 1Gi
+      limits:
+        memory: 2Gi
 
     persistence:
       enabled: true
