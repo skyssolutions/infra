@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 3.5.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -25,22 +25,59 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    defaultPodOptions:
+      podSecurityContext:
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: "OnRootMismatch"
     controller:
-      annotations:
-        reloader.stakater.com/auto: "true"
-    image:
-      repository: odoo
-      tag: "17.0-20241007"
-      pullPolicy: Always
+      odoo:
+        type: deployment
+        annotations:
+          reloader.stakater.com/auto: "true"
+
+        containers:
+          odoo:
+            image:
+              repository: odoo
+              tag: 17.0-20241007
+            envFrom:
+              - secretRef:
+                  name: odoo-secrets
+          code:
+            image:
+              repository: ghcr.io/coder/code-server
+              tag: 4.95.1
+            env:
+              TZ: "Europe/Helsinki"
+            args:
+              - --user-data-dir
+              - "/tmp/.vscode"
+              - --extensions-dir
+              - "/tmp/.vscode"
+              - --port
+              - "8081"
+              - "/mnt/extra-addons"
+
+
     service:
       main:
+        controller: odoo
+        type: ClusterIP
         ports:
           http:
             port: 8069
+      code:
+        type: ClusterIP
+        controller: odoo
+        ports:
+          http:
+            port: 8081
     ingress:
       main:
         enabled: true
-        ingressClassName: nginx
+        className: nginx
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
         hosts:
@@ -48,6 +85,9 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+                service:
+                  identifier: main
+                  port: http
           #- host: "${SECRET_DOMAIN_2}"
           #  paths:
           #    - path: /
@@ -56,27 +96,21 @@ spec:
           - hosts:
               - *host
         #      - ${SECRET_DOMAIN_2}
-    envFrom:
-      - secretRef:
-          name: odoo-secrets
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
     persistence:
       config:
         enabled: true
         existingCLaim: odoo-config-v2
-        mountPath: /var/lib/odoo
+        globalMounts:
+         - path: /var/lib/odoo
       etc-config-file:
         enabled: true
         type: configMap
         name: odoo-configmap
-        mountPath: /etc/odoo/odoo.conf
-        subPath: odoo.conf
-        readOnly: true
+        globalMounts:
+          - path: /etc/odoo/odoo.conf
+            subPath: odoo.conf
       extra-addons:
         enabled: true
         existingClaim: odoo-addons-v1
-        mountPath: /mnt/extra-addons
+        globalMounts:
+          - path: /mnt/extra-addons
