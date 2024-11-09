@@ -5,7 +5,7 @@ resources:
   - ./pvc-addons.yaml
   - ./external-secret.yaml
   - ./helm-release.yaml
-  - ../../../../templates/volsync-r2
+#  - ../../../../templates/volsync-r2
 configMapGenerator:
   - name: odoo-configmap
     files:
