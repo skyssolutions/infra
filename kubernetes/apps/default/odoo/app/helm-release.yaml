@@ -26,7 +26,7 @@ spec:
     keepHistory: false
   values:
     defaultPodOptions:
-      podSecurityContext:
+      securityContext:
         runAsUser: 568
         runAsGroup: 568
         fsGroup: 568
@@ -99,7 +99,8 @@ spec:
     persistence:
       config:
         enabled: true
-        existingCLaim: odoo-config-v2
+        name: config
+        existingClaim: odoo-config-v2
         globalMounts:
          - path: /var/lib/odoo
       etc-config-file:
