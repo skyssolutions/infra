@@ -69,8 +69,8 @@ spec:
           http:
             port: 8069
       code:
-        type: ClusterIP
         controller: odoo
+        type: ClusterIP
         ports:
           http:
             port: 8081
@@ -86,7 +86,7 @@ spec:
               - path: /
                 pathType: Prefix
                 service:
-                  identifier: main
+                  identifier: odoo
                   port: http
           #- host: "${SECRET_DOMAIN_2}"
           #  paths:
