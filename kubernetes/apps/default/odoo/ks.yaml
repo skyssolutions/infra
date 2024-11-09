@@ -23,7 +23,7 @@ spec:
   postBuild:
     substitute:
       APP: odoo
-      VOLSYNC_CLAIM: odoo-data
+      VOLSYNC_CLAIM: odoo-config-v1
       VOLSYNC_CAPACITY: 5Gi
       APP_UID: "568"
       APP_GID: "568"
