@@ -112,6 +112,7 @@ spec:
             subPath: odoo.conf
       extra-addons:
         enabled: true
+        name: extra-addons
         existingClaim: odoo-addons-v1
         globalMounts:
           - path: /mnt/extra-addons
