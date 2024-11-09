@@ -86,7 +86,7 @@ spec:
               - path: /
                 pathType: Prefix
                 service:
-                  identifier: odoo
+                  identifier: main
                   port: http
           #- host: "${SECRET_DOMAIN_2}"
           #  paths:
