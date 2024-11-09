@@ -99,7 +99,7 @@ spec:
         #      - ${SECRET_DOMAIN_2}
     persistence:
       config:
-        existingClaim: odoo-config-v2
+        existingClaim: odoo-config-v1
         globalMounts:
          - path: /var/lib/odoo
       etc-config-file:
