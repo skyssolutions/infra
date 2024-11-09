@@ -42,7 +42,7 @@ spec:
           odoo:
             image:
               repository: odoo
-              tag: 17.0-20241108
+              tag: 17.0-20241029
             envFrom:
               - secretRef:
                   name: odoo-secrets
