@@ -31,7 +31,7 @@ spec:
         runAsGroup: 568
         fsGroup: 568
         fsGroupChangePolicy: "OnRootMismatch"
-    controller:
+    controllers:
       odoo:
         type: deployment
         annotations:
