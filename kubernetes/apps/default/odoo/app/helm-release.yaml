@@ -98,13 +98,10 @@ spec:
         #      - ${SECRET_DOMAIN_2}
     persistence:
       config:
-        enabled: true
-        name: config
         existingClaim: odoo-config-v2
         globalMounts:
          - path: /var/lib/odoo
       etc-config-file:
-        enabled: true
         type: configMap
         name: odoo-configmap
         globalMounts:
@@ -112,7 +109,6 @@ spec:
             subPath: odoo.conf
       extra-addons:
         enabled: true
-        name: extra-addons
         existingClaim: odoo-addons-v1
         globalMounts:
           - path: /mnt/extra-addons
