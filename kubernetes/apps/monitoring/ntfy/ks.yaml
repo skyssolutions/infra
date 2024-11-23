@@ -4,6 +4,7 @@ metadata:
   name: ntfy
   namespace: flux-system
 spec:
+  targetNamespace: monitoring
   path: ./kubernetes/apps/monitoring/ntfy/app
   prune: true
   sourceRef:
