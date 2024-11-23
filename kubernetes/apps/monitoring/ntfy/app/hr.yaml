@@ -59,7 +59,7 @@ spec:
             port: 8080
     ingress:
       app:
-        className: "external"
+        className: "nginx"
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
         hosts:
