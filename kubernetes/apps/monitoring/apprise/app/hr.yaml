@@ -49,6 +49,7 @@ spec:
         className: nginx
         annotations:
           hajimari.io/icon: bell-cog
+          external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
         hosts:
           - host: apprise.${SECRET_DOMAIN_3}
             paths:
