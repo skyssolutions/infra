@@ -49,6 +49,9 @@ spec:
         className: nginx
         annotations:
           hajimari.io/icon: bell-cog
+          nginx.ingress.kubernetes.io/auth-type: basic
+          nginx.ingress.kubernetes.io/auth-secret: basic-auth
+          nginx.ingress.kubernetes.io/auth-realm: 'Access restricted - private instance'
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
         hosts:
           - host: &host apprise.${SECRET_DOMAIN_3}
