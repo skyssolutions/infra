@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./ntfy/ks.yaml
+  - ./apprise/ks.yaml
