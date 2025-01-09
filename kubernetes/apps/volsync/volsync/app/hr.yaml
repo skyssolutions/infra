@@ -32,7 +32,7 @@ spec:
       disableAuth: true
     image:
       repository: &image ghcr.io/onedr0p/volsync
-      tag: &tag 0.11.0@sha256:12f312c6fa99d0c1427c4ee05d4f69791ebc67b919de659f0bc31622db4892da
+      tag: &tag 0.11.0@sha256:a4ee8f7f9ee3a3b4ca5a66436cb6c4d6aa276f63260e9b1a6da6c92642ec82a8
     restic:
       repository: *image
       tag: *tag
