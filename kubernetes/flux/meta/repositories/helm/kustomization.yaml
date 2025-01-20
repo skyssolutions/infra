@@ -32,3 +32,4 @@ resources:
   - ./windmill.yaml
   - ./woodpecker.yaml
   - ./zitadel.yaml
+  - ./openebs-zfs-localpv.yaml
