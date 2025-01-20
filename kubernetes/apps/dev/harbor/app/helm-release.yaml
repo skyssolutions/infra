@@ -153,7 +153,7 @@ spec:
       # and fill the connection information in "external" section
       type: external
       external:
-        host: "postgres-default-rw.database.svc.cluster.local"
+        host: "postgres17-rw.database.svc.cluster.local"
         port: "5432"
         username: "harbor"
       #  password: "password"
