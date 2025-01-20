@@ -78,11 +78,11 @@ spec:
             substitute: {}
             substituteFrom:
               - kind: ConfigMap
-                name: global-cluster-config
+                name: cluster-settings
               - kind: Secret
-                name: global-cluster-secrets
+                name: cluster-secrets-user
               - kind: ConfigMap
-                name: cluster-config
+                name: cluster-settings-user
               - kind: Secret
                 name: cluster-secrets
       target:
