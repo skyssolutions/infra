@@ -1,0 +1,61 @@
+---
+clusterName: oracle
+# renovate: depName=ghcr.io/siderolabs/installer datasource=docker
+talosVersion: v1.9.2
+# renovate: depName=ghcr.io/siderolabs/kubelet datasource=docker
+kubernetesVersion: v1.32.1
+
+
+cniConfig:
+  name: none
+
+
+endpoint: https://10.0.0.6:6443
+domain: cluster.local
+allowSchedulingOnMasters: true
+additionalApiServerCertSans:
+  - cluster.local
+clusterPodNets:
+  - 10.50.0.0/16
+  - fdd5:67d:98f5:a0::/60
+
+clusterSvcNets:
+  - 10.51.0.0/16
+  - fdd5:67d:98f5:e0::1:0/112
+
+
+nodes:
+  - hostname: talos-m1
+    ipAddress: 2603:c026:303:4ffb:a153:ed25:f06a:403d
+    controlPlane: true
+    installDisk: /dev/sda
+    machineSpec:
+      mode: metal
+      arch: arm64
+    schematic:
+      customization:
+        systemExtensions:
+          officialExtensions:
+          #  - siderolabs/iscsi-tools
+            - siderolabs/util-linux-tools
+            - siderolabs/zfs
+    networkInterfaces:
+      - interface: eth0
+        dhcp: true
+
+
+
+patches:
+  - "@./patches/global/cluster-discovery.yaml"
+  - "@./patches/global/containerd.yaml"
+  - "@./patches/global/disable-search-domain.yaml"
+  - "@./patches/global/kubelet.yaml"
+  - "@./patches/global/sysctl.yaml"
+  - "@./patches/global/disable-kexec.yaml"
+  - "@./patches/global/time.yaml"
+
+controlPlane:
+  patches:
+    - "@./patches/controller/cluster.yaml"
+    - "@./patches/controller/kube-prism.yaml"
+    - "@./patches/controller/zfs-kernel.yaml"
