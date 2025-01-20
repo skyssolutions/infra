@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: snapshot-controller
-      version: 3.0.6
+      version: 4.0.1
       sourceRef:
         kind: HelmRepository
         name: piraeus
@@ -21,13 +21,9 @@ spec:
     remediation:
       retries: 3
   upgrade:
+    crds: CreateReplace
     cleanupOnFail: true
     remediation:
       retries: 3
   uninstall:
     keepHistory: false
-  values:
-    args:
-      leaderElection: true
-      httpEndpoint: ":8080"
-      enableDistributedSnapshotting: true
