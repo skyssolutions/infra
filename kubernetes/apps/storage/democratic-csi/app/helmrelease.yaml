@@ -32,7 +32,6 @@ spec:
       enabled: true
       strategy: node
       externalProvisioner:
-        image: registry.k8s.io/sig-storage/csi-provisioner:v3.6.4 # See https://github.com/rook/rook/issues/13458
         args:
           - --v=9
           - --timeout=90s
@@ -49,7 +48,7 @@ spec:
 
       # distributed support is not yet ready
       externalResizer:
-        enabled: true
+        enabled: false
 
       externalSnapshotter:
         enabled: true
@@ -58,10 +57,12 @@ spec:
           - --node-deployment=true
 
       driver:
+        image: ghcr.io/democratic-csi/democratic-csi:v1.9.3
         imagePullPolicy: Always
         logLevel: debug
     node:
       driver:
+        image: ghcr.io/democratic-csi/democratic-csi:v1.9.3
         imagePullPolicy: Always
         logLevel: debug
 
@@ -77,9 +78,13 @@ spec:
         zfs:
           datasetParentName: tank/k8s/volumes
           detachedSnapshotsDatasetParentName: tank/k8s/snapshots
-
           datasetEnableQuotas: true
           datasetEnableReservation: false
+          datasetProperties:
+            recordsize: "1M"
+            compression: lz4
+            atime: off
+            overlay: on
 
     storageClasses:
       - name: zfs
