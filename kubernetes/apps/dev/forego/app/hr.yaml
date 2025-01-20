@@ -49,7 +49,7 @@ spec:
           ENABLED: true
         database:
           DB_TYPE: postgres
-          HOST: postgres-default-rw.database.svc.cluster.local:5432
+          HOST: postgres17-rw.database.svc.cluster.local:5432
           NAME: forgejo
           SCHEMA: public
           SSL_MODE: disable
