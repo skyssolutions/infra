@@ -8,6 +8,7 @@ resources:
   - ./cilium.yaml
   - ./cnpg.yaml
   - ./coredns.yaml
+  - ./controlplaneio.yaml
   - ./csi-driver-nfs.yaml
   - ./external-dns.yaml
   - ./external-secrets.yaml
