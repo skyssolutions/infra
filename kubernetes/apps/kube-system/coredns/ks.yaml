@@ -7,6 +7,7 @@ metadata:
   labels:
     substitution.flux.home.arpa/disabled: "true"
 spec:
+  targetNamespace: kube-system
   path: ./kubernetes/apps/kube-system/coredns/app
   prune: false # never should be deleted
   sourceRef:
