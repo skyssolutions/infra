@@ -95,7 +95,7 @@ tasks:
         ns: Namespace the PVC is in (default: default)
         app: Application to snapshot (required)
     cmds:
-      - kubectl -n {{.ns}} patch replicationsources {{.app}} --type merge -p '{"spec":{"trigger":{"manual":"{{.now}}"}}}'
+      - kubectl -n {{.ns}} patch replicationsources {{.app}}-r2 --type merge -p '{"spec":{"trigger":{"manual":"{{.now}}"}}}'
       - bash {{.VOLSYNC_SCRIPTS_DIR}}/wait-for-job.sh {{.job}} {{.ns}}
       - kubectl -n {{.ns}} wait job/{{.job}} --for condition=complete --timeout=120m
     env: *env
@@ -110,7 +110,7 @@ tasks:
     preconditions:
       - test -f {{.VOLSYNC_SCRIPTS_DIR}}/which-controller.sh
       - test -f {{.VOLSYNC_SCRIPTS_DIR}}/wait-for-job.sh
-      - kubectl -n {{.ns}} get replicationsources {{.app}}
+      - kubectl -n {{.ns}} get replicationsources {{.app}}-r2
 
   # To run restore jobs in parallel for all replicationdestinations:
   #    - kubectl get replicationsources --all-namespaces --no-headers | awk '{print $2, $1}' | xargs --max-procs=4 -l bash -c 'task volsync:restore app=$0 ns=$1'
