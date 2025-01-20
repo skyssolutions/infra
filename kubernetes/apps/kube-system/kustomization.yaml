@@ -5,8 +5,7 @@ resources:
   - ./namespace.yaml
   - ./coredns/ks.yaml
   - ./local-path-provisioner/ks.yaml
+  - ./talos-ccm/ks.yaml
  # - ./metrics-server/ks.yaml
- # - ./reloader/ks.yaml
-#  - ./reflector/ks.yaml
-#  - ./external-secrets/ks.yaml
-#  - ./external-secrets/ks-stores.yaml
+  - ./reloader/ks.yaml
+  - ./reflector/ks.yaml
