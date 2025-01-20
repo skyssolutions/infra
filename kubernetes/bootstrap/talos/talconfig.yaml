@@ -10,7 +10,7 @@ cniConfig:
   name: none
 
 
-endpoint: https://10.0.0.6:6443
+endpoint: https://[2603:c026:303:4ffb:a153:ed25:f06a:403d]:6443
 domain: cluster.local
 allowSchedulingOnMasters: true
 additionalApiServerCertSans:
