@@ -30,7 +30,7 @@ kind: ReplicationSource
 metadata:
   name: ${APP}-addons-r2
 spec:
-  sourcePVC: "${VOLSYNC_CLAIM:-${APP}}"
+  sourcePVC: "${VOLSYNC_CLAIM:-${APP}-addons}"
   trigger:
     schedule: "30 3 * * *"
   restic:
