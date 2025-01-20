@@ -7,9 +7,9 @@ metadata:
     app.kubernetes.io/name: harbor-registry
     app.kubernetes.io/instance: harbor
 spec:
-  storageClassName: openebs-hostpath
+  storageClassName: zfs
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 150Gi
+      storage: 80Gi
