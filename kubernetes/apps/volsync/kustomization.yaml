@@ -6,4 +6,4 @@ resources:
   # Pre Flux-Kustomizations
   - ./ns.yaml
   # Flux-Kustomizations
-  - ./volsync/ks.yaml
+#  - ./volsync/ks.yaml
