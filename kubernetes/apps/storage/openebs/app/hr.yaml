@@ -7,24 +7,55 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: zfs-localpv
-      version: 2.6.2
+      chart: openebs
+      version: 4.1.2
       sourceRef:
         kind: HelmRepository
-        name: openebs-zfs-localpv
+        name: openebs
         namespace: flux-system
   install:
+    timeout: 30m
+    replace: true
+    crds: CreateReplace
+    createNamespace: true
     remediation:
       retries: 3
   upgrade:
-    cleanupOnFail: true
     remediation:
+      remediateLastFailure: true
       retries: 3
+      strategy: rollback
+    cleanupOnFail: true
+    crds: CreateReplace
+  test:
+    enable: true
+  rollback:
+    recreate: true
+    force: true
+    cleanupOnFail: true
+  uninstall:
+    keepHistory: false
   values:
-    crds:
-      zfsLocalPv:
-        enabled: true
+    engines:
+      local:
+        lvm:
+          enabled: false
+        zfs:
+          enabled: true
+      replicated:
+        mayastor:
+          enabled: false
+    openebs-crds:
       csi:
         volumeSnapshots:
-          # Installed with the Snapshot Controller
           enabled: false
+    zfs-localpv:
+      enabled: true
+      zfsNode:
+        encrKeysDir: /var/openebs/keys
+      crds:
+        zfsLocalPv:
+          enabled: true
+        csi:
+          volumeSnapshots:
+            enabled: false
