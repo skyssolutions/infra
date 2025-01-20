@@ -5,7 +5,8 @@ metadata:
   name: external-secrets
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/kube-system/external-secrets/app
+  targetNamespace: infra
+  path: ./kubernetes/apps/infra/external-secrets/app
   prune: true
   sourceRef:
     kind: GitRepository
