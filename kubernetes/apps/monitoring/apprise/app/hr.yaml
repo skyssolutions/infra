@@ -69,4 +69,4 @@ spec:
         type: persistentVolumeClaim
         accessMode: ReadWriteOnce
         size: 10Mi
-        storageClass: local-path
+        storageClass: local-hostpath
