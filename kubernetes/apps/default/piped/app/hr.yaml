@@ -37,7 +37,7 @@ spec:
         configmap.reloader.stakater.com/reload: "piped-backend-config"
       initContainers:
         01-init-db:
-          image: ghcr.io/onedr0p/postgres-init:16.6
+          image: ghcr.io/onedr0p/postgres-init:17
           imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
@@ -65,7 +65,7 @@ spec:
         REQWEST_PROXY: socks5://127.0.0.1:40000
         #DISABLE_REGISTRATION: true
         database:
-          connection_url: jdbc:postgresql://postgres-default-rw.database.svc.cluster.local/piped
+          connection_url: jdbc:postgresql://postgres17-rw.database.svc.cluster.local/piped
           secret:
            name: *secret
            username: DB_USERNAME

@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: database-cloudnative-pg-cluster
+    - name: postgres17-cluster
   path: ./kubernetes/apps/default/piped/app
   prune: true
   sourceRef:
