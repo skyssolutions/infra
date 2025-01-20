@@ -17,6 +17,10 @@ spec:
   targetNamespace: flux-system
   timeout: 5m
   wait: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -41,6 +45,7 @@ spec:
     secretRef:
       name: sops-age
   postBuild:
+    substitute: {}
     substituteFrom:
       - kind: ConfigMap
         name: cluster-settings
@@ -50,3 +55,38 @@ spec:
         name: cluster-settings-user
       - kind: Secret
         name: cluster-secrets-user
+  patches:
+    - patch: |-
+        - patch: |-
+        apiVersion: kustomize.toolkit.fluxcd.io/v1
+        kind: Kustomization
+        metadata:
+          name: not-used
+          namespace: not-used
+        spec:
+          interval: 10m0s
+          retryInterval: 2m0s
+          timeout: 5m
+          wait: true
+          sourceRef:
+            kind: GitRepository
+            name: flux-system
+          decryption:
+            provider: sops
+            secretRef:
+              name: sops-age
+          postBuild:
+            substitute: {}
+            substituteFrom:
+              - kind: ConfigMap
+                name: global-cluster-config
+              - kind: Secret
+                name: global-cluster-secrets
+              - kind: ConfigMap
+                name: cluster-config
+              - kind: Secret
+                name: cluster-secrets
+      target:
+        kind: Kustomization
+        group: kustomize.toolkit.fluxcd.io
+        version: v1
