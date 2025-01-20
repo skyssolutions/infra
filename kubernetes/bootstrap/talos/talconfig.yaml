@@ -53,6 +53,7 @@ patches:
   - "@./patches/global/sysctl.yaml"
   - "@./patches/global/disable-kexec.yaml"
   - "@./patches/global/time.yaml"
+  - "@./patches/global/cloud-controller.yaml"
 
 controlPlane:
   patches:
@@ -60,3 +61,4 @@ controlPlane:
     - "@./patches/controller/disable-admission-controller.yaml"
     - "@./patches/controller/kube-prism.yaml"
     - "@./patches/controller/zfs-kernel.yaml"
+    - "@./patches/controller/api-access.yaml"
