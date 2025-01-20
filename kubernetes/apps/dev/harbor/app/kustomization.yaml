@@ -9,6 +9,5 @@ resources:
   - ./pvc/registry.yaml
   - ./pvc/jobservice.yaml
   - ./pvc/jobservice-scandata.yaml
-  - ./pvc/database.yaml
   - ./pvc/redis.yaml
   - ./pvc/trivy.yaml
