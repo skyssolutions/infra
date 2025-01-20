@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ns.yaml
   - harbor/ks.yaml
-#  - forego/ks.yaml
+  - forego/ks.yaml
