@@ -15,38 +15,38 @@ spec:
   superuserSecret:
     name: cloudnative-pg-secret
   enableSuperuserAccess: true
-#  backup:
-#    retentionPolicy: "30d"
-#    barmanObjectStore: &barmanObjectStore
-#      wal:
-#        compression: bzip2
-#        maxParallel: 4
-#      data:
-#        compression: bzip2
-#      destinationPath: s3://oracle-cnpg/
-#      endpointURL: http://s3.skym.fi
-#      serverName: &currentCluster cnpg17-v1
-#      s3Credentials:
-#        accessKeyId:
-#          name: cloudnative-pg-secret
-#          key: aws-access-key-id
-#        secretAccessKey:
-#          name: cloudnative-pg-secret
-#          key: aws-secret-access-key
-  bootstrap:
-    initdb:
-      import:
-        type: monolith
-        databases: ["*"]
-        roles: ["*"]
-        source:
-          externalCluster: cnpg14
-  externalClusters:
-    - name: cnpg14
-      connectionParameters:
-        host: postgres14-rw.database.svc.cluster.local
-        user: postgres
-        dbname: postgres
-      password:
-        name: cloudnative-pg-secret
-        key: password
+  backup:
+    retentionPolicy: "30d"
+    barmanObjectStore: &barmanObjectStore
+      wal:
+        compression: bzip2
+        maxParallel: 4
+      data:
+        compression: bzip2
+      destinationPath: s3://oracle-cnpg/
+      endpointURL: http://s3.skym.fi
+      serverName: &currentCluster cnpg17-v1
+      s3Credentials:
+        accessKeyId:
+          name: cloudnative-pg-secret
+          key: aws-access-key-id
+        secretAccessKey:
+          name: cloudnative-pg-secret
+          key: aws-secret-access-key
+#  bootstrap:
+#    initdb:
+#      import:
+#        type: monolith
+#        databases: ["*"]
+#        roles: ["*"]
+#        source:
+#          externalCluster: cnpg14
+#  externalClusters:
+#    - name: cnpg14
+#      connectionParameters:
+#        host: postgres14-rw.database.svc.cluster.local
+#        user: postgres
+#        dbname: postgres
+#      password:
+#        name: cloudnative-pg-secret
+#        key: password
