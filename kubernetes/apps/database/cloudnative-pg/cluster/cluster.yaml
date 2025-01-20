@@ -3,11 +3,11 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: postgres
+  name: postgres14
   namespace: database
 spec:
   instances: 1
-  imageName: ghcr.io/cloudnative-pg/postgresql:17.2
+  imageName: ghcr.io/cloudnative-pg/postgresql:14.1
   primaryUpdateStrategy: unsupervised
   storage:
     size: 10Gi
@@ -25,7 +25,7 @@ spec:
         compression: bzip2
       destinationPath: s3://oracle-cnpg/
       endpointURL: http://s3.skym.fi
-      serverName: &currentCluster cnpg17-v1
+      serverName: &currentCluster cnpg14-v2
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
