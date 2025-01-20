@@ -33,3 +33,4 @@ resources:
   - ./woodpecker.yaml
   - ./zitadel.yaml
   - ./openebs-zfs-localpv.yaml
+  - ./openebs.yaml
