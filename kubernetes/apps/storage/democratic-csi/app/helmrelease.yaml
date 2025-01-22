@@ -57,12 +57,12 @@ spec:
           - --node-deployment=true
 
       driver:
-        image: ghcr.io/democratic-csi/democratic-csi:v1.9.3
+        image: ghcr.io/democratic-csi/democratic-csi:next
         imagePullPolicy: Always
         logLevel: debug
     node:
       driver:
-        image: ghcr.io/democratic-csi/democratic-csi:v1.9.3
+        image: ghcr.io/democratic-csi/democratic-csi:next
         imagePullPolicy: Always
         logLevel: debug
 
@@ -76,8 +76,8 @@ spec:
         driver: zfs-local-dataset
 
         zfs:
-          datasetParentName: tank/k8s/volumes
-          detachedSnapshotsDatasetParentName: tank/k8s/snapshots
+          datasetParentName: tank/k8s/volumes-csi
+          detachedSnapshotsDatasetParentName: tank/k8s/snapshots-csi
           datasetEnableQuotas: true
           datasetEnableReservation: false
           datasetProperties:
@@ -87,7 +87,7 @@ spec:
             overlay: on
 
     storageClasses:
-      - name: zfs
+      - name: democratic-csi-zfs
         defaultClass: true
         reclaimPolicy: Delete
         volumeBindingMode: Immediate
@@ -96,7 +96,7 @@ spec:
           fsType: zfs
 
     volumeSnapshotClasses:
-      - name: zfs
+      - name: democratic-csi-zfs
         deletionPolicy: Delete
         parameters:
           detachedSnapshots: "true"
