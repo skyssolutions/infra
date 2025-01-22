@@ -88,7 +88,7 @@ spec:
 
     storageClasses:
       - name: democratic-csi-zfs
-        defaultClass: true
+        defaultClass: false
         reclaimPolicy: Delete
         volumeBindingMode: Immediate
         allowVolumeExpansion: true
