@@ -1,0 +1,72 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: athens
+  namespace: dev
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: athens-proxy
+      version: 0.14.4
+      sourceRef:
+        kind: HelmRepository
+        name: athens
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    replicaCount: 1
+    image:
+      registry: registry.skysolutions.fi
+      repository: docker.io/gomods/athens
+      tag: v0.15.4
+      runAsNonRoot: true
+
+    strategy:
+      # -- Using RollingUpdate requires a shared storage
+      type: Recreate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+
+    ingress:
+      enabled: true
+      className: nginx
+      hosts:
+        - host: athens.skysolutions.fi
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls:
+        - hosts:
+            - athens.skysolutions.fi
+
+
+    storage:
+      type: disk
+      disk:
+        storageRoot: "/var/lib/athens"
+        persistence:
+          enabled: true
+          accessMode: ReadWriteOnce
+          size: 20Gi
+
+    serviceAccount:
+      create: true
+
+    resources:
+      limits:
+        cpu: 100m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+
