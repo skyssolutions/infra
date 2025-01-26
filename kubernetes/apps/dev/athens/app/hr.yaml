@@ -28,7 +28,14 @@ spec:
       registry: registry.skysolutions.fi
       repository: docker.io/gomods/athens
       tag: v0.15.4
-      runAsNonRoot: true
+      # runAsNonRoot: true
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: "OnRootMismatch"
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
 
     strategy:
       # -- Using RollingUpdate requires a shared storage
