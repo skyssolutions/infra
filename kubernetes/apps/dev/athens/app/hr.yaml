@@ -58,6 +58,7 @@ spec:
           enabled: true
           accessMode: ReadWriteOnce
           size: 20Gi
+          storageClass: zfs
 
     serviceAccount:
       create: true
