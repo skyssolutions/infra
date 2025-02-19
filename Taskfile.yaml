@@ -17,7 +17,7 @@ env:
   TALOSCONFIG: '{{.BOOTSTRAP_DIR}}/talos/clusterconfig/talosconfig'
 
 includes:
-  bootstrap: .taskfiles/bootstrap
+#  bootstrap: .taskfiles/bootstrap
   brew: .taskfiles/BrewTasks.yaml
   cluster: .taskfiles/ClusterTasks.yaml
   externalsecrets:
