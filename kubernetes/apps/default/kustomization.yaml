@@ -6,4 +6,5 @@ resources:
   - ./odoo/ks.yaml
   - ./smtp-relay/ks.yaml
   - ./piped/ks.yaml
+  - ./piped/ks-helper.yaml
 #  - ./invoiceninja
