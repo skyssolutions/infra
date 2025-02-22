@@ -43,9 +43,6 @@ spec:
             - secretRef:
                 name: &secret piped-db-creds
       additionalContainers:
-        bg-helper:
-            image: registry.skysolutions.fi/docker.io/1337kavin/bg-helper-server:latest
-            imagePullPolicy: Always
         warp:
           image: registry.skysolutions.fi/library/warp-sock5:22022025
           imagePullPolicy: Always
