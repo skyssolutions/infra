@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: piped
-      version: 7.0.2
+      version: 7.1.0
       sourceRef:
         kind: HelmRepository
         name: piped
@@ -54,7 +54,7 @@ spec:
         #repository: registry.skysolutions.fi/library/piped
         #tag: "2024-04-06-2de41b6"
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped
-        tag: latest@sha256:4640c0a7c2ec920a7e1c42db94cab41c1da08ae04e307620c5d9a619b0e3bffc
+        tag: latest@sha256:61f64d0ed060592cd2120b181f68a9aa7de07114e5480168669d3c759311c1b5
         pullPolicy: Always
 
       config:
