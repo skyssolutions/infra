@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: piped
@@ -64,7 +64,7 @@ spec:
         PORT: 8080
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
-        BG_HELPER_URL: http://localhost:3000
+        BG_HELPER_URL: https://helper.piped.fi
         #HTTP_PROXY: 127.0.0.1:8888
         REQWEST_PROXY: socks5://127.0.0.1:40000
         #DISABLE_REGISTRATION: true

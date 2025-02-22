@@ -7,13 +7,14 @@ metadata:
 spec:
   dependsOn:
     - name: postgres17-cluster
+    - name: default-piped-helper
   path: ./kubernetes/apps/default/piped/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
   healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+    - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
       name: piped
       namespace: default
