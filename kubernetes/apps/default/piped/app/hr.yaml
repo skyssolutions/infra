@@ -42,14 +42,14 @@ spec:
           envFrom:
             - secretRef:
                 name: &secret piped-db-creds
-      additionalContainers:
-        warp:
-          image: registry.skysolutions.fi/library/warp-sock5:24012025
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities:
-              add:
-                - NET_ADMIN
+#      additionalContainers:
+#        warp:
+#          image: registry.skysolutions.fi/library/warp-sock5:24012025
+#          imagePullPolicy: IfNotPresent
+#          securityContext:
+#            capabilities:
+#              add:
+#                - NET_ADMIN
       image:
         #repository: registry.skysolutions.fi/library/piped
         #tag: "2024-04-06-2de41b6"
@@ -62,7 +62,7 @@ spec:
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
         #HTTP_PROXY: 127.0.0.1:8888
-        REQWEST_PROXY: socks5://127.0.0.1:40000
+        #REQWEST_PROXY: socks5://127.0.0.1:40000
         #DISABLE_REGISTRATION: true
         database:
           connection_url: jdbc:postgresql://postgres17-rw.database.svc.cluster.local/piped
@@ -80,15 +80,15 @@ spec:
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
-        PROXY: socks5://127.0.0.1:40000
-      additionalContainers:
-        warp:
-          image: registry.skysolutions.fi/library/warp-sock5:24012025
-          imagePullPolicy: IfNotPresent
-          securityContext:
-            capabilities:
-              add:
-                - NET_ADMIN
+        #PROXY: socks5://127.0.0.1:40000
+#      additionalContainers:
+#        warp:
+#          image: registry.skysolutions.fi/library/warp-sock5:24012025
+#          imagePullPolicy: IfNotPresent
+#          securityContext:
+#            capabilities:
+#              add:
+#                - NET_ADMIN
 
 
     ingress:
