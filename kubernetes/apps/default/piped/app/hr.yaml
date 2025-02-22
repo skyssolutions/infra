@@ -76,19 +76,19 @@ spec:
       image:
         # Pull-though cache
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped-proxy
-        tag: latest@sha256:3ba11a0bd1c06b5af758df57637998a8a07a4f0e15e9dd01336b065333886d87
+        tag: latest@sha256:b361d1cdecfe55d5815b3591b86745708496fe155e68d38074a44fee8e8d3933
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
-        #PROXY: socks5://127.0.0.1:40000
-#      additionalContainers:
-#        warp:
-#          image: registry.skysolutions.fi/library/warp-sock5:24012025
-#          imagePullPolicy: IfNotPresent
-#          securityContext:
-#            capabilities:
-#              add:
-#                - NET_ADMIN
+        PROXY: socks5://127.0.0.1:40000
+      additionalContainers:
+        warp:
+          image: registry.skysolutions.fi/library/warp-sock5:24012025
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
 
 
     ingress:
