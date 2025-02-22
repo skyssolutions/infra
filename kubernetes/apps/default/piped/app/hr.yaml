@@ -43,9 +43,12 @@ spec:
             - secretRef:
                 name: &secret piped-db-creds
       additionalContainers:
+        bg-helper:
+            image: registry.skysolutions.fi/docker.io/1337kavin/bg-helper-server:latest
+            imagePullPolicy: Always
         warp:
           image: registry.skysolutions.fi/library/warp-sock5:22022025
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           securityContext:
             capabilities:
               add:
@@ -61,6 +64,7 @@ spec:
         PORT: 8080
         HTTP_WORKERS: 4
         PROXY_PART: https://proxy.piped.fi
+        BG_HELPER_URL: http://localhost:3000
         #HTTP_PROXY: 127.0.0.1:8888
         REQWEST_PROXY: socks5://127.0.0.1:40000
         #DISABLE_REGISTRATION: true
