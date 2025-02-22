@@ -44,7 +44,7 @@ spec:
                 name: &secret piped-db-creds
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:22022025
+          image: registry.skysolutions.fi/library/warp-sock5:24012025
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
@@ -83,7 +83,7 @@ spec:
         PROXY: socks5://127.0.0.1:40000
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:22022025
+          image: registry.skysolutions.fi/library/warp-sock5:24012025
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
