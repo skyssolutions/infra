@@ -7,4 +7,3 @@ resources:
   - ./smtp-relay/ks.yaml
   - ./piped/ks.yaml
   - ./piped/ks-helper.yaml
-#  - ./invoiceninja
