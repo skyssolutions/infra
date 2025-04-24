@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: forgejo
-      version: 11.0.5
+      version: 11.0.3
       sourceRef:
         kind: HelmRepository
         name: forego-helm
@@ -78,7 +78,7 @@ spec:
     image:
       registry: "code.forgejo.org"
       repository: forgejo/forgejo
-      tag: "10.0.3"
+      tag: "11.0.0"
       rootless: true
 
     podSecurityContext:
