@@ -113,7 +113,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: anubis-secret
-                key: ED25519_PRIVATE_KEY_HEX
+                key: ED25519_PRIVATE_KEY
           - name: 'TARGET'
             value: 'http://localhost:3000'
         ports:
