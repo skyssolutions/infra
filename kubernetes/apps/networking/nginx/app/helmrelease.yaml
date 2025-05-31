@@ -27,6 +27,7 @@ spec:
   values:
     controller:
       replicaCount: 1
+      minAvailable: 1
       updateStrategy:
        type: Recreate
       allowSnippetAnnotations: true
