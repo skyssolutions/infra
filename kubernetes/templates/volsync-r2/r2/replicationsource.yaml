@@ -19,6 +19,15 @@ spec:
       runAsUser: ${APP_UID:-568}
       runAsGroup: ${APP_GID:-568}
       fsGroup: ${APP_GID:-568}
+    moverAffinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - talos-m1
     pruneIntervalDays: 7
     retain:
       daily: 7
