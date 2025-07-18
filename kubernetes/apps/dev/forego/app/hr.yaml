@@ -110,7 +110,7 @@ spec:
           - name: 'DIFFICULTY'
             value: '10'
           - name: 'SERVE_ROBOTS_TXT'
-            value: 'false'
+            value: 'true'
           - name: ED25519_PRIVATE_KEY_HEX
             valueFrom:
               secretKeyRef:
