@@ -86,7 +86,7 @@ spec:
       runAsGroup: 1000
       fsGroup: 1000
 
-    redis-cluster:
+    valkey-cluster:
       enabled: false
     postgresql-ha:
       enabled: false
