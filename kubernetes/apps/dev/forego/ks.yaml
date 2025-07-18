@@ -18,7 +18,7 @@ spec:
     substitute:
       APP: forego
       VOLSYNC_CLAIM: forego-data
-      VOLSYNC_CACHE_CAPACITY: 30Gi
+      VOLSYNC_CACHE_CAPACITY: 1Gi
       VOLSYNC_CAPACITY: 60Gi
       APP_UID: "1000"
       APP_GID: "1000"
