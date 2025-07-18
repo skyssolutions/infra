@@ -1,18 +1,39 @@
 ---
-area/ansible:
-  - "ansible/**/*"
-  - "bootstrap/templates/ansible/**/*"
-  - "bootstrap/tasks/ansible/**/*"
+area/docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - README.md
 area/github:
-  - ".github/**/*"
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**/*
 area/kubernetes:
-  - "kubernetes/**/*"
-  - "bootstrap/templates/kubernetes/**/*"
-  - "bootstrap/tasks/kubernetes/**/*"
-area/bootstrap:
-  - "bootstrap/**/*"
-  - "bootstrap/configure.yaml"
-area/addons:
-  - "bootstrap/templates/addons/**/*"
-  - "bootstrap/tasks/addons/**/*"
-  - "bootstrap/vars/addons.sample.yaml"
+  - changed-files:
+      - any-glob-to-any-file:
+          - kubernetes/**/*
+area/mise:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .mise.toml
+area/renovate:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .renovate/**/*
+          - .renovaterc.json5
+area/scripts:
+  - changed-files:
+      - any-glob-to-any-file:
+          - scripts/**/*
+area/talos:
+  - changed-files:
+      - any-glob-to-any-file:
+          - talos/**/*
+area/taskfile:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .taskfiles/**/*
+          - Taskfile.yaml
+area/templates:
+  - changed-files:
+      - any-glob-to-any-file:
+          - templates/**/*
