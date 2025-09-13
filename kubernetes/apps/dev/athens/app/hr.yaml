@@ -27,7 +27,7 @@ spec:
     image:
       registry: registry.skysolutions.fi
       repository: docker.io/gomods/athens
-      tag: v0.16.0
+      tag: v0.16.1
       # runAsNonRoot: true
     securityContext:
       runAsUser: 1000
