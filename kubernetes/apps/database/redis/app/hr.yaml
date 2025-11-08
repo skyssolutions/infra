@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: redis
-      tag: 7.4.6-alpine
+      tag: 7.4.7-alpine
     controller:
       type: deployment
     service:
