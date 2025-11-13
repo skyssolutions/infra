@@ -107,9 +107,11 @@ spec:
         args:
           - "-policy-fname"
           - "/etc/anubis/policies/botPolicies.yaml"
-        volumes:
+        volumeMounts:
           - name: anubis-policies
             mountPath: /etc/anubis/policies
+        volumes:
+          - name: anubis-policies
             configMap:
               name: anubis-configmap
         env:
