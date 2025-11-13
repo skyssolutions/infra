@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: anubis-configmap
+  namespace: dev
+data:
+  botPolicies.yaml: |
+    bots:
+    - import: (data)/meta/default-config.yaml
+    - name: runner
+      action: ALLOW
+      remote_addresses: ["2a01:4f9:c012:cbdf::1/128"]

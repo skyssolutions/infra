@@ -104,6 +104,14 @@ spec:
       - name: anubis
         image: ghcr.io/techarohq/anubis:v1.23.1
         imagePullPolicy: Always
+        args:
+          - "-policy-fname"
+          - "/etc/anubis/policies/botPolicies.yaml"
+        volumes:
+          - name: anubis-policies
+            mountPath: /etc/anubis/policies
+            configMap:
+              name: anubis-configmap
         env:
           - name: 'BIND'
             value: ':8080'
