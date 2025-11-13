@@ -110,10 +110,6 @@ spec:
         volumeMounts:
           - name: anubis-policies
             mountPath: /etc/anubis/policies
-        volumes:
-          - name: anubis-policies
-            configMap:
-              name: anubis-configmap
         env:
           - name: 'BIND'
             value: ':8080'
@@ -141,6 +137,10 @@ spec:
               - ALL
           seccompProfile:
             type: RuntimeDefault
+    extraVolumes:
+      - name: anubis-policies
+        configMap:
+          name: anubis-configmap
     ingress:
       enabled: true
       className: nginx
