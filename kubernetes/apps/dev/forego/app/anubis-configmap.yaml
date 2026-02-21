@@ -9,4 +9,4 @@ data:
     - import: (data)/meta/default-config.yaml
     - name: runner
       action: ALLOW
-      remote_addresses: ["2a01:4f9:c012:cbdf::1/128","65.109.2.136/32"]
+      remote_addresses: ["2a04:3540:1000:310:e4aa:70ff:feb6:3b0b/128","212.147.239.25/32"]
