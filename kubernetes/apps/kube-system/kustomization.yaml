@@ -6,7 +6,7 @@ resources:
   - ./coredns/ks.yaml
   - ./local-path-provisioner/ks.yaml
   - ./talos-ccm/ks.yaml
-  - ./cilium/ks.yaml
+#  - ./cilium/ks.yaml
  # - ./metrics-server/ks.yaml
   - ./reloader/ks.yaml
   - ./reflector/ks.yaml
