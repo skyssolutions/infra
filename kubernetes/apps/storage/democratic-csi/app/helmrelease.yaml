@@ -57,13 +57,18 @@ spec:
           - --node-deployment=true
 
       driver:
-        image: ghcr.io/democratic-csi/democratic-csi:next
-        imagePullPolicy: Always
+        image:
+          registry: ghcr.io/democratic-csi/democratic-csi
+          tag: next
+          pullPolicy: Always
         logLevel: debug
+
     node:
       driver:
-        image: ghcr.io/democratic-csi/democratic-csi:next
-        imagePullPolicy: Always
+        image:
+          registry: ghcr.io/democratic-csi/democratic-csi
+          tag: next
+          pullPolicy: Always
         logLevel: debug
 
     csiDriver:
