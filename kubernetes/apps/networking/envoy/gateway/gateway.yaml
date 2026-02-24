@@ -2,6 +2,8 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: envoy
+  annotations:
+    external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN_2}
 spec:
   gatewayClassName: envoy
   listeners:

@@ -26,6 +26,10 @@ spec:
     keepHistory: false
   values:
     fullnameOverride: *app
+    image:
+      repository: registry.k8s.io/external-dns/external-dns
+      tag: v0.16.1
+      pullPolicy: Always
     provider: cloudflare
     env:
       - name: CF_API_TOKEN
@@ -37,8 +41,9 @@ spec:
       - --cloudflare-proxied
       - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
       - --crd-source-kind=DNSEndpoint
+      - --gateway-name=envoy
     policy: sync
-    sources: ["crd", "ingress"]
+    sources: ["crd", "ingress", "gateway-httproute"]
     txtPrefix: k8s.
     txtOwnerId: default
     domainFilters:
