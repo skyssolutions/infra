@@ -49,7 +49,7 @@ spec:
         parentRefs:
           - name: envoy
             namespace: networking
-            sectionName: https
+            sectionName: https3
         rules:
           - backendRefs:
               - name: apprise

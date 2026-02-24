@@ -23,3 +23,13 @@ spec:
         certificateRefs:
           - kind: Secret
             name: ${SECRET_DOMAIN_2/./-}-production-tls
+    - name: https3
+      protocol: HTTPS
+      port: 443
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - kind: Secret
+            name: ${SECRET_DOMAIN_3/./-}-production-tls
