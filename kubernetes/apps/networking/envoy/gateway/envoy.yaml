@@ -99,7 +99,8 @@ spec:
   clientIPDetection:
     xForwardedFor:
       trustedCIDRs:
-        - 10.244.0.0/16
+        - 10.50.0.0/15
+        - fdd5:67d:98f5::/56
   http2:
     onInvalidMessage: TerminateStream
   http3: {}

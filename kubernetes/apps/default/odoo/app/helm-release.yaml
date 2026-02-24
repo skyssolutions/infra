@@ -92,6 +92,8 @@ spec:
                   add:
                     - name: "X-Forwarded-Proto"
                       value: "https"
+                    - name: "X-Forwarded-Host"
+                      value: "erp.${SECRET_DOMAIN_2}"
 
     persistence:
       config:
