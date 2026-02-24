@@ -24,7 +24,7 @@ spec:
       retries: 3
   values:
     expose:
-      type: ingress
+      type: route
       tls:
         # ! ingress=none/secret, clusterip=auto
         certSource: secret
@@ -32,21 +32,15 @@ spec:
         #   commonName: "cr.${SECRET_EXT_DOMAIN}"
         secret:
           secretName: "harbor-tls"
-      ingress:
+      route:
+        parentRefs:
+          - name: envoy
+            namespace: networking
+            sectionName: https
+            group: gateway.networking.k8s.io
+            kind: Gateway
         hosts:
-          core: registry.${SECRET_DOMAIN_2}
-        controller: default
-        className: "nginx"
-        annotations:
-          nginx.ingress.kubernetes.io/ssl-redirect: "true"
-          nginx.ingress.kubernetes.io/proxy-body-size: "0"
-          nginx.ingress.kubernetes.io/client-body-buffer-size: "10g"
-          cert-manager.io/cluster-issuer: letsencrypt-production
-          # Remember to NOT use CF proxying due to 100M upload limit though it
-          external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
-          external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN_2}"
-          nginx.ingress.kubernetes.io/custom-http-errors: "418"
-          nginx.ingress.kubernetes.io/proxy-connect-timeout: "480"
+          - registry.${SECRET_DOMAIN_2}
     externalURL: https://registry.${SECRET_DOMAIN_2}
     ipFamily:
       ipv6:
