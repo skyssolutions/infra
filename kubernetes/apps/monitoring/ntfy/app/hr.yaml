@@ -52,21 +52,21 @@ spec:
         ports:
           http:
             port: 8080
-    ingress:
+    route:
       app:
-        className: "nginx"
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
-        hosts:
-          - host: &host ntfy.${SECRET_DOMAIN_3}
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+        hostnames:
+          - ntfy.${SECRET_DOMAIN_3}
+        parentRefs:
+          - name: envoy
+            namespace: networking
+            sectionName: https
+        rules:
+          - backendRefs:
+              - name: ntfy
+                port: 8080
+
     persistence:
       attachments:
         type: emptyDir
