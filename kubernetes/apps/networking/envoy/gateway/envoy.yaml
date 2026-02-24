@@ -12,6 +12,8 @@ spec:
     kubernetes:
       envoyDeployment:
         replicas: 1
+        strategy:
+          type: Recreate
         container:
           image: mirror.gcr.io/envoyproxy/envoy:v1.37.0
           resources:
