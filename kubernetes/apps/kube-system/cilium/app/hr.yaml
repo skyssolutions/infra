@@ -25,6 +25,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    operator:
+      replicas: 1
+
     cgroup:
       automount:
         enabled: false
