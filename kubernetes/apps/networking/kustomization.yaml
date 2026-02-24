@@ -9,4 +9,3 @@ resources:
   - ./external-dns/ks.yaml
   - ./envoy/ks.yaml
 #  - ./external-dns/ks-ext.yaml
-#  - ./nginx/ks.yaml
