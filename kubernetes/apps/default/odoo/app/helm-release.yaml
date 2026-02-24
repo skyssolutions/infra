@@ -86,6 +86,12 @@ spec:
           - backendRefs:
               - name: main
                 port: 8069
+            filters:
+              - type: RequestHeaderModifier
+                requestHeaderModifier:
+                  add:
+                    - name: "X-Forwarded-Proto"
+                      value: "https"
 
     persistence:
       config:
