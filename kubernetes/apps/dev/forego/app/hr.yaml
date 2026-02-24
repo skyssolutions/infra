@@ -141,21 +141,21 @@ spec:
       - name: anubis-policies
         configMap:
           name: anubis-configmap
-    ingress:
+
+    httpRoute:
       enabled: true
-      className: nginx
       annotations:
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
         external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN_2}
-      hosts:
-        - host: &host "git.${SECRET_DOMAIN_2}"
-          paths:
-            - path: /
-              pathType: Prefix
-              port: anubis
-      tls:
-        - hosts:
-           - *host
+      parentRefs:
+        - name: envoy
+          group: gateway.networking.k8s.io
+          kind: Gateway
+          namespace: networking
+      hostnames:
+        - "git.${SECRET_DOMAIN_2}"
+    ingress:
+      enabled: false
 
     postgresql:
       enabled: false
