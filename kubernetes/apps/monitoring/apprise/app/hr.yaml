@@ -45,14 +45,14 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
         hostnames:
-          - ntfy.${SECRET_DOMAIN_3}
+          - apprise.${SECRET_DOMAIN_3}
         parentRefs:
           - name: envoy
             namespace: networking
             sectionName: https
         rules:
           - backendRefs:
-              - name: ntfy
+              - name: apprise
                 port: 8080
     # TODO: volsync
     persistence:
