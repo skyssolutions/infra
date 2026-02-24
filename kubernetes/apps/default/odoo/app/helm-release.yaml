@@ -71,28 +71,22 @@ spec:
         ports:
           http:
             port: 8081
-    ingress:
-      main:
-        enabled: true
-        className: nginx
+
+    route:
+      app:
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN_2}"
-        hosts:
-          - host: &host "erp.${SECRET_DOMAIN_2}"
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  identifier: main
-                  port: http
-          #- host: "${SECRET_DOMAIN_2}"
-          #  paths:
-          #    - path: /
-          #      pathType: Prefix
-        tls:
-          - hosts:
-              - *host
-        #      - ${SECRET_DOMAIN_2}
+        hostnames:
+          - "erp.${SECRET_DOMAIN_2}"
+        parentRefs:
+          - name: envoy
+            namespace: networking
+            sectionName: https
+        rules:
+          - backendRefs:
+              - name: main
+                port: 8069
+
     persistence:
       config:
         existingClaim: odoo-config
