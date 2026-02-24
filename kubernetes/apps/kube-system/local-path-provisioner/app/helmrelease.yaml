@@ -47,7 +47,7 @@ spec:
         enabled: false
       externalSnapshotter:
         enabled: true
-        image: registry.k8s.io/sig-storage/csi-snapshotter:v8.3.0
+        image: registry.k8s.io/sig-storage/csi-snapshotter:v8.4.0
         extraArgs:
           - --leader-election=false
           - --node-deployment=true
@@ -79,7 +79,7 @@ spec:
           dirPermissionsGroup: 0
     node:
       driver:
-        image: democraticcsi/democratic-csi:v1.9.3
+        image: democraticcsi/democratic-csi:v1.9.5
         extraVolumeMounts:
           - name: local-hostpath
             mountPath: *storagePath
@@ -90,4 +90,4 @@ spec:
             path: *storagePath
             type: DirectoryOrCreate
     csiProxy:
-      image: ghcr.io/democratic-csi/csi-grpc-proxy:v0.5.6
+      image: ghcr.io/democratic-csi/csi-grpc-proxy:v0.5.7

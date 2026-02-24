@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: piped
-      version: 8.0.14
+      version: 8.0.29
       sourceRef:
         kind: HelmRepository
         name: piped
@@ -44,7 +44,7 @@ spec:
                 name: &secret piped-db-creds
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:31052025
+          image: registry.skysolutions.fi/library/warp-sock5:31102025
           imagePullPolicy: Always
           securityContext:
             capabilities:
@@ -54,7 +54,7 @@ spec:
         #repository: registry.skysolutions.fi/library/piped
         #tag: "2024-04-06-2de41b6"
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped
-        tag: latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7
+        tag: latest@sha256:9ad2ed9ff568c40bfa50ea4bf07957f7bc2ae0768ce1f494f9fa99598f8c368b
         pullPolicy: Always
 
       config:
@@ -77,14 +77,14 @@ spec:
       image:
         # Pull-though cache
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped-proxy
-        tag: latest@sha256:9d09aeed7839f7ce6e8d545598b6d0cd4c729b91dcd8f7da18124d577ab39ad6
+        tag: latest@sha256:67cfd06be3041f9f9ef284397ebd432f0ccad112a7739b39e107c17305928314
         pullPolicy: Always
       env:
         RUST_BACKTRACE: 1
         PROXY: socks5://127.0.0.1:40000
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:31052025
+          image: registry.skysolutions.fi/library/warp-sock5:31102025
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
