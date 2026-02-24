@@ -16,6 +16,7 @@ spec:
     - name: https
       protocol: HTTPS
       port: 443
+      hostname: "*.${SECRET_DOMAIN_2}"
       allowedRoutes:
         namespaces:
           from: All
@@ -26,6 +27,7 @@ spec:
     - name: https3
       protocol: HTTPS
       port: 443
+      hostname: "*.${SECRET_DOMAIN_3}"
       allowedRoutes:
         namespaces:
           from: All
