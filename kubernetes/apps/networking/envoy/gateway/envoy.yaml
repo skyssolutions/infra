@@ -19,8 +19,16 @@ spec:
               cpu: 100m
             limits:
               memory: 2Gi
+        patch:
+          type: StrategicMerge
+          value:
+            spec:
+              template:
+                spec:
+                  hostNetwork: true
+                  dnsPolicy: ClusterFirstWithHostNet
       envoyService:
-        type: NodePort
+        type: ClusterIP
         externalTrafficPolicy: Local
   shutdown:
     drainTimeout: 180s
