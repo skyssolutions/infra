@@ -44,7 +44,8 @@ spec:
         type: ClusterIP
         externalTrafficPolicy: Local
   shutdown:
-    drainTimeout: 180s
+    drainTimeout: 10s
+    minDrainDuration: 5s
   telemetry:
     metrics:
       prometheus:
