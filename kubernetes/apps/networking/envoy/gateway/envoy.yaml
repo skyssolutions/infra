@@ -48,7 +48,7 @@ spec:
     group: gateway.envoyproxy.io
     kind: EnvoyProxy
     name: envoy
-    namespace: network
+    namespace: networking
 ---
 apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: BackendTrafficPolicy
