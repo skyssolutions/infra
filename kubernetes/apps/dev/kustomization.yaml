@@ -5,4 +5,4 @@ resources:
   - ns.yaml
 #  - athens/ks.yaml
   - harbor/ks.yaml
-#  - forego/ks.yaml
+  - forego/ks.yaml
