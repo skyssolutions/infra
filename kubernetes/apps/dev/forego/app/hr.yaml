@@ -33,6 +33,7 @@ spec:
         repository:
           DEFAULT_BRANCH: main
           DEFAULT_PRIVATE: true
+          ENABLE_PUSH_CREATE_USER: true
         admin:
           DISABLE_REGULAR_ORG_CREATION: true
         security:
