@@ -45,6 +45,7 @@ spec:
           SSH_PORT: 222
         service:
           DISABLE_REGISTRATION: true
+          ENABLE_INTERNAL_SIGNIN: false
           # REQUIRE_SIGNIN_VIEW: true
         cron:
           ENABLED: true
