@@ -74,6 +74,8 @@ spec:
         indexer:
           REPO_INDEXER_ENABLED: true
           REPO_INDEXER_REPO_TYPES: sources
+        other:
+          SHOW_FOOTER_VERSION: false
     strategy:
       type: 'Recreate'
     image:
