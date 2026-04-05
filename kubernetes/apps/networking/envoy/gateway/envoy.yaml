@@ -114,7 +114,12 @@ spec:
   tls:
     minVersion: "1.2"
     # OpenSSL regression workaround
-    maxVersion: "1.2"
+    #maxVersion: "1.2"
     alpnProtocols:
       - h2
       - http/1.1
+    ciphers:
+      - ECDHE-ECDSA-AES128-GCM-SHA256
+      - ECDHE-RSA-AES128-GCM-SHA256
+      - ECDHE-ECDSA-AES256-GCM-SHA384
+      - ECDHE-RSA-AES256-GCM-SHA384
