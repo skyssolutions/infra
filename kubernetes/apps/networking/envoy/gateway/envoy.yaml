@@ -9,8 +9,8 @@ spec:
     level:
       default: info
       connection: debug
-      http: debug
-      http2: debug
+      http: info
+      http2: info
   provider:
     type: Kubernetes
     kubernetes:
@@ -106,7 +106,7 @@ spec:
         - fdd5:67d:98f5::/56
   http2:
     onInvalidMessage: TerminateStream
-  http3: {}
+#  http3: {}
   targetSelectors:
     - group: gateway.networking.k8s.io
       kind: Gateway
