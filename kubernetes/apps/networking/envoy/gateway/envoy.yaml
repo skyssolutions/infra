@@ -114,7 +114,7 @@ spec:
   tls:
     minVersion: "1.2"
     # OpenSSL regression workaround
-    #maxVersion: "1.2"
+    maxVersion: "1.2"
     alpnProtocols:
       - h2
       - http/1.1
