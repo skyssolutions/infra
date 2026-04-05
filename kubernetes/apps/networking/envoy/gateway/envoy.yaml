@@ -8,6 +8,10 @@ spec:
   logging:
     level:
       default: info
+      tls: debug
+      connection: debug
+      http: debug
+      http2: debug
   provider:
     type: Kubernetes
     kubernetes:
