@@ -50,7 +50,7 @@ spec:
     kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
     loadBalancer:
       algorithm: "maglev"
-      mode: "dsr"
+      mode: "snat"
 
     routingMode: "native"
     ipv4NativeRoutingCIDR: "10.50.0.0/16"
