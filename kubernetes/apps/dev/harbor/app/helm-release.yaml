@@ -33,6 +33,9 @@ spec:
         secret:
           secretName: "harbor-tls"
       route:
+        annotations:
+          external-dns.alpha.kubernetes.io/target: ingress.${SECRET_DOMAIN_2}
+          external-dns.alpha.kubernetes.io/cloudflare-proxied: false
         parentRefs:
           - name: envoy
             namespace: networking
