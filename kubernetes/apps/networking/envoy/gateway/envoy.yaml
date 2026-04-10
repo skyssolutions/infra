@@ -44,6 +44,13 @@ spec:
       envoyService:
         type: ClusterIP
         externalTrafficPolicy: Local
+        patch:
+          type: StrategicMerge
+          value:
+            spec:
+              externalIPs:
+                - 129.151.199.216
+                - 2603:c026:303:4ffb:a153:ed25:f06a:403d
   shutdown:
     drainTimeout: 10s
     minDrainDuration: 5s
