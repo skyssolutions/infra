@@ -160,6 +160,8 @@ spec:
           namespace: networking
       hostnames:
         - "git.${SECRET_DOMAIN_2}"
+      port: 8080
+
     ingress:
       enabled: false
 
