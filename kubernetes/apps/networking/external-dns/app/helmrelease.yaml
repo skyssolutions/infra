@@ -43,7 +43,7 @@ spec:
       - --crd-source-kind=DNSEndpoint
       - --gateway-name=envoy
     logLevel: debug
-    policy: upsert-only
+    policy: sync
     sources: ["crd", "ingress", "gateway-httproute"]
     txtPrefix: k8s.
     txtOwnerId: default
