@@ -121,6 +121,8 @@ spec:
             value: '10'
           - name: 'SERVE_ROBOTS_TXT'
             value: 'true'
+          - name: 'SLOG_LEVEL'
+            value: "DEBUG"
           - name: ED25519_PRIVATE_KEY_HEX
             valueFrom:
               secretKeyRef:
