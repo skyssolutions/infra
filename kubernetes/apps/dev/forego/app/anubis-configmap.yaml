@@ -6,8 +6,18 @@ metadata:
 data:
   botPolicies.yaml: |
     bots:
-    - import: (data)/meta/default-config.yaml
+    #- import: (data)/meta/default-config.yaml
     - import: (data)/bots/_deny-pathological.yaml
+    - import: (data)/meta/ai-block-aggressive.yaml
+    - import: (data)/crawlers/_allow-good.yaml
+    - import: (data)/clients/x-firefox-ai.yaml
+    - import: (data)/common/keep-internet-working.yaml
     - name: runner
       action: ALLOW
       remote_addresses: ["2a01:4f9:c012:cbdf::1/128","65.109.2.136/32"]
+    - name: generic-browser
+      user_agent_regex: >-
+        Mozilla|Opera
+      action: WEIGH
+      weight:
+        adjust: 10
