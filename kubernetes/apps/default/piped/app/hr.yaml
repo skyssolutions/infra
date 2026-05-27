@@ -44,8 +44,8 @@ spec:
                 name: &secret piped-db-creds
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:31102025
-          imagePullPolicy: Always
+          image: ghcr.io/skyssolutions/warp-sock5:22052026
+          imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
               add:
@@ -84,7 +84,7 @@ spec:
         PROXY: socks5://127.0.0.1:40000
       additionalContainers:
         warp:
-          image: registry.skysolutions.fi/library/warp-sock5:31102025
+          image: ghcr.io/skyssolutions/warp-sock5:22052026
           imagePullPolicy: IfNotPresent
           securityContext:
             capabilities:
