@@ -54,7 +54,7 @@ spec:
         #repository: registry.skysolutions.fi/library/piped
         #tag: "2024-04-06-2de41b6"
         repository: registry.skysolutions.fi/docker.io/1337kavin/piped
-        tag: latest@sha256:7747e19ee501c0a3afa94dd3d6e982dd4247f1babe03fb515b4a0f0b87f82b2e
+        tag: latest@sha256:3d1623d01da2bd8c912ef9407fb6d3ce41a6d9ef486e4e2a102f0c4733e5c086
         pullPolicy: Always
 
       config:
