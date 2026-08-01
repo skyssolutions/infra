@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: external-secrets
-      version: v0.16.2 # https://github.com/external-secrets/external-secrets/issues/5478
+      version: 0.20.4 # https://github.com/external-secrets/external-secrets/issues/5478
       sourceRef:
         kind: HelmRepository
         name: external-secrets
