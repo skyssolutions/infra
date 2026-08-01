@@ -9,11 +9,16 @@ spec:
     kind: OCIRepository
     name: envoy-gateway
   interval: 30m
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
   values:
     config:
       envoyGateway:
         extensionApis:
           enableBackend: true
+          enableEnvoyPatchPolicy: true
         provider:
           type: Kubernetes
           kubernetes:
