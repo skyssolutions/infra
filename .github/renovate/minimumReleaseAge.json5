@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": "Lower minimum release age for Forgejo",
+      "matchPackageNames": ["forgejo", "forgejo/forgejo", "code.forgejo.org/forgejo/forgejo", "code.forgejo.org/forgejo-helm/forgejo"],
+      "minimumReleaseAge": "3 days"
+    }
+  ]
+}
