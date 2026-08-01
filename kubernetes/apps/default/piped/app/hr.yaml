@@ -94,7 +94,7 @@ spec:
 
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: nginx
         hosts:
           - host: &host piped.fi
@@ -106,7 +106,7 @@ spec:
             secretName: piped-production-tls
 
       backend:
-        enabled: true
+        enabled: false
         ingressClassName: nginx
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN_2}"
@@ -121,7 +121,7 @@ spec:
 
 
       ytproxy:
-        enabled: true
+        enabled: false
         ingressClassName: nginx
         annotations:
           external-dns.alpha.kubernetes.io/target: "ingress.${SECRET_DOMAIN_2}"
