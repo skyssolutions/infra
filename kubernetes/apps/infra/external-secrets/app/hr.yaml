@@ -17,10 +17,12 @@ spec:
   install:
     remediation:
       retries: 3
+    crds: Create
   upgrade:
     cleanupOnFail: true
     remediation:
       retries: 3
+    crds: CreateReplace
   uninstall:
     keepHistory: false
   values:
