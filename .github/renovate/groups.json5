@@ -27,6 +27,13 @@
       "versioning": "semver",
       "group": {"commitMessageTopic": "{{{groupName}}}"},
       "separateMinorPatch": true
+    },
+    {
+      "description": "Keep Odoo on its current major (train) version, only take date-based updates",
+      "matchPackageNames": ["docker.io/odoo"],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
