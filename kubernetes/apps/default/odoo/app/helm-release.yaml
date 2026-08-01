@@ -38,7 +38,7 @@ spec:
           odoo:
             image:
               repository: docker.io/odoo
-              tag: 17.0-20251222
+              tag: 19.0-20251222
             envFrom:
               - secretRef:
                   name: odoo-secrets
