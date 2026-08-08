@@ -106,7 +106,7 @@ spec:
 
     extraContainers:
       - name: anubis
-        image: ghcr.io/techarohq/anubis:v1.26.2
+        image: ghcr.io/techarohq/anubis:v1.27.0
         imagePullPolicy: Always
         args:
           - "-policy-fname"
