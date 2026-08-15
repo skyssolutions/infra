@@ -103,30 +103,30 @@ spec:
 
     portal:
       image:
-        repository: ghcr.io/octohelm/harbor/harbor-portal
-        tag: v2.14.0
+        repository: ghcr.io/samip5/harbor/harbor-portal
+        tag: v2.15.2
       revisionHistoryLimit: 3
     core:
       image:
-        repository: ghcr.io/octohelm/harbor/harbor-core
-        tag: v2.14.0
+        repository: ghcr.io/samip5/harbor/harbor-core
+        tag: v2.15.2
       revisionHistoryLimit: 3
       podAnnotations:
         secret.reloader.stakater.com/reload: "harbor-secrets"
     jobservice:
       image:
-        repository: ghcr.io/octohelm/harbor/harbor-jobservice
-        tag: v2.14.0
+        repository: ghcr.io/samip5/harbor/harbor-jobservice
+        tag: v2.15.2
       revisionHistoryLimit: 3
     registry:
       registry:
         image:
-          repository: ghcr.io/octohelm/harbor/registry-photon
-          tag: v2.14.0
+          repository: ghcr.io/samip5/harbor/registry-photon
+          tag: v2.15.2
       controller:
         image:
-          repository: ghcr.io/octohelm/harbor/harbor-registryctl
-          tag: v2.14.0
+          repository: ghcr.io/samip5/harbor/harbor-registryctl
+          tag: v2.15.2
       upload_purging:
         enabled: true
         # remove files in _upload directories which exist for a period of time, default is one week.
@@ -140,8 +140,8 @@ spec:
     trivy:
       enabled: true
       image:
-        repository: ghcr.io/octohelm/harbor/trivy-adapter-photon
-        tag: v2.14.0
+        repository: ghcr.io/samip5/harbor/trivy-adapter-photon
+        tag: v2.15.2
     notary:
       enabled: false
 
@@ -165,8 +165,8 @@ spec:
       type: internal
       internal:
         image:
-          repository: ghcr.io/octohelm/harbor/redis-photon
-          tag: v2.14.0
+          repository: ghcr.io/samip5/harbor/valkey-photon
+          tag: v2.15.2
       #external:
         # support redis, redis+sentinel
         # addr for redis: <host_redis>:<port_redis>
@@ -190,8 +190,8 @@ spec:
       replicas: 1
       revisionHistoryLimit: 3
       image:
-        repository: ghcr.io/octohelm/harbor/harbor-exporter
-        tag: v2.14.0
+        repository: ghcr.io/samip5/harbor/harbor-exporter
+        tag: v2.15.2
     metrics:
       enabled: true
       core:
