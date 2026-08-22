@@ -43,14 +43,14 @@ spec:
       - --crd-source-kind=DNSEndpoint
       - --gateway-name=envoy
     logLevel: debug
-    policy: sync
+    policy: upsert-only
     sources: ["crd", "ingress", "gateway-httproute"]
     txtPrefix: k8s.
     txtOwnerId: default
     domainFilters:
       - "${SECRET_DOMAIN}"
       - "${SECRET_DOMAIN_2}"
-      - "${SECRET_DOMAIN_3}"
+#      - "${SECRET_DOMAIN_3}"
     serviceMonitor:
       enabled: true
     podAnnotations:
