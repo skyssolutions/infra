@@ -1,0 +1,23 @@
+---
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: postgres17-backup
+  namespace: database
+spec:
+  retentionPolicy: "30d"
+  configuration:
+    destinationPath: s3://oracle-cnpg/
+    endpointURL: http://s3.skym.fi
+    s3Credentials:
+      accessKeyId:
+        name: cloudnative-pg-secret
+        key: aws-access-key-id
+      secretAccessKey:
+        name: cloudnative-pg-secret
+        key: aws-secret-access-key
+    wal:
+      compression: bzip2
+      maxParallel: 4
+    data:
+      compression: bzip2

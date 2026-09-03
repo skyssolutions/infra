@@ -18,24 +18,12 @@ spec:
   postgresql:
     parameters:
       max_connections: "600"
-  backup:
-    retentionPolicy: "30d"
-    barmanObjectStore: &barmanObjectStore
-      wal:
-        compression: bzip2
-        maxParallel: 4
-      data:
-        compression: bzip2
-      destinationPath: s3://oracle-cnpg/
-      endpointURL: http://s3.skym.fi
-      serverName: &currentCluster cnpg17-v1
-      s3Credentials:
-        accessKeyId:
-          name: cloudnative-pg-secret
-          key: aws-access-key-id
-        secretAccessKey:
-          name: cloudnative-pg-secret
-          key: aws-secret-access-key
+  plugins:
+    - name: barman-cloud.cloudnative-pg.io
+      isWALArchiver: true
+      parameters:
+        barmanObjectName: postgres17-backup
+        serverName: cnpg17-v1
 #  bootstrap:
 #    initdb:
 #      import:

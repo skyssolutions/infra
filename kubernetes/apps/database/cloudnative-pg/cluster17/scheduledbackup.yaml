@@ -8,5 +8,8 @@ metadata:
 spec:
   backupOwnerReference: self
   schedule: "@daily"
+  method: plugin
+  pluginConfiguration:
+    name: barman-cloud.cloudnative-pg.io
   cluster:
     name: postgres17
