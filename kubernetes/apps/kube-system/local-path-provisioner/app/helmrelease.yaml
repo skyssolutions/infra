@@ -17,6 +17,7 @@ spec:
   install:
     remediation:
       retries: 3
+      strategy: uninstall
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -25,6 +26,16 @@ spec:
   dependsOn:
     - name: snapshot-controller
       namespace: storage
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              kind: VolumeSnapshotClass
+              name: csi-local-hostpath
+            patch: |
+              - op: replace
+                path: /parameters
+                value: {}
   values:
     controller:
       fullnameOverride: *name
