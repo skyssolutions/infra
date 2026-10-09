@@ -35,3 +35,26 @@ spec:
         certificateRefs:
           - kind: Secret
             name: ${SECRET_DOMAIN_3/./-}-production-tls
+    # towonel-agent only: requires PROXY protocol (see envoy-tunnel ClientTrafficPolicy)
+    - name: https-tunnel
+      protocol: HTTPS
+      port: 8443
+      hostname: "*.${SECRET_DOMAIN_2}"
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - kind: Secret
+            name: ${SECRET_DOMAIN_2/./-}-production-tls
+    - name: https3-tunnel
+      protocol: HTTPS
+      port: 8443
+      hostname: "*.${SECRET_DOMAIN_3}"
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - kind: Secret
+            name: ${SECRET_DOMAIN_3/./-}-production-tls

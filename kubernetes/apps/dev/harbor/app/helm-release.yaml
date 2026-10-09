@@ -44,6 +44,11 @@ spec:
             sectionName: https
             group: gateway.networking.k8s.io
             kind: Gateway
+          - name: envoy
+            namespace: networking
+            sectionName: https-tunnel
+            group: gateway.networking.k8s.io
+            kind: Gateway
         hosts:
           - registry.${SECRET_DOMAIN_2}
     externalURL: https://registry.${SECRET_DOMAIN_2}

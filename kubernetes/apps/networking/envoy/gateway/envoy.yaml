@@ -130,3 +130,43 @@ spec:
       - ECDHE-RSA-AES128-GCM-SHA256
       - ECDHE-ECDSA-AES256-GCM-SHA384
       - ECDHE-RSA-AES256-GCM-SHA384
+---
+# Same as the envoy policy above, plus required PROXY protocol for towonel-agent.
+# Listener-level policies take precedence over the Gateway-level one.
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: ClientTrafficPolicy
+metadata:
+  name: envoy-tunnel
+spec:
+  clientIPDetection:
+    xForwardedFor:
+      trustedCIDRs:
+        - 10.50.0.0/15
+        - fdd5:67d:98f5::/56
+  http2:
+    onInvalidMessage: TerminateStream
+  proxyProtocol:
+    optional: false
+  targetRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: envoy
+      sectionName: https-tunnel
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: envoy
+      sectionName: https3-tunnel
+  tcpKeepalive: {}
+  timeout:
+    http:
+      idleTimeout: 60s
+  tls:
+    minVersion: "1.2"
+    alpnProtocols:
+      - h2
+      - http/1.1
+    ciphers:
+      - ECDHE-ECDSA-AES128-GCM-SHA256
+      - ECDHE-RSA-AES128-GCM-SHA256
+      - ECDHE-ECDSA-AES256-GCM-SHA384
+      - ECDHE-RSA-AES256-GCM-SHA384

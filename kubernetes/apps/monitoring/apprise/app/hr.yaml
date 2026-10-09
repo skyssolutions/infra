@@ -48,6 +48,9 @@ spec:
           - name: envoy
             namespace: networking
             sectionName: https3
+          - name: envoy
+            namespace: networking
+            sectionName: https3-tunnel
         rules:
           - backendRefs:
               - name: apprise

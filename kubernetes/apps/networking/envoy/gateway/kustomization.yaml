@@ -5,4 +5,5 @@ kind: Kustomization
 resources:
   - ./envoy.yaml
   - ./gateway.yaml
+  - ./networkpolicy.yaml
   - ./redirect.yaml

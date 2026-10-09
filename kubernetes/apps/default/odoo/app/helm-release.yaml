@@ -82,6 +82,9 @@ spec:
           - name: envoy
             namespace: networking
             sectionName: https
+          - name: envoy
+            namespace: networking
+            sectionName: https-tunnel
         rules:
           - backendRefs:
               - name: main
