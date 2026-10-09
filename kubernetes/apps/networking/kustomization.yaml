@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./cloudflared/ks.yaml
-  - ./certificates
+  - ./certificates/ks.yaml
 #  - ./echo-server/ks.yaml
   - ./external-dns/ks.yaml
   - ./envoy/ks.yaml
