@@ -1,0 +1,35 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cert-manager-webhook-bunny
+spec:
+  chartRef:
+    kind: OCIRepository
+    name: cert-manager-webhook-bunny
+  interval: 30m
+  maxHistory: 2
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    groupName: bunny.aardbol.dev
+    certManager:
+      namespace: cert-manager
+      serviceAccountName: cert-manager
+    secretAccess:
+      namespace: cert-manager
+      names:
+        - bunny-api
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+      limits:
+        memory: 128Mi

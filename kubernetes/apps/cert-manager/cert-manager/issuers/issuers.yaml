@@ -18,8 +18,17 @@ spec:
           dnsZones:
             - "${SECRET_DOMAIN}"
             - "${SECRET_DOMAIN_2}"
-            - "${SECRET_DOMAIN_3}"
             - "piped.fi"
+      - dns01:
+          webhook:
+            groupName: bunny.aardbol.dev
+            solverName: bunny
+            config:
+              secretRef: bunny-api
+              secretNamespace: cert-manager
+          selector:
+            dnsZones:
+              - "${SECRET_DOMAIN_3}"
       #- dns01:
       #    rfc2136:
       #      nameserver: ns1.kapsi.fi
@@ -52,4 +61,3 @@ spec:
           dnsZones:
             - "${SECRET_DOMAIN}"
             - "${SECRET_DOMAIN_2}"
-            - "${SECRET_DOMAIN_3}"
