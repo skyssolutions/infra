@@ -26,9 +26,9 @@ spec:
             config:
               secretRef: bunny-api
               secretNamespace: cert-manager
-          selector:
-            dnsZones:
-              - "${SECRET_DOMAIN_3}"
+        selector:
+          dnsZones:
+            - "${SECRET_DOMAIN_3}"
       #- dns01:
       #    rfc2136:
       #      nameserver: ns1.kapsi.fi
