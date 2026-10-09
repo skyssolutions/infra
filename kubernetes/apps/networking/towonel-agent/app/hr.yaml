@@ -42,7 +42,7 @@ spec:
               TOWONEL_AGENT_SERVICES: |
                 [
                   {"hostname":"*.d10.fi","origin":"envoy.networking.svc.cluster.local:443"},
-                  {"hostname":"*.skysolutions.fi","origin":"envoy.networking.svc.cluster.local:443"},
+                  {"hostname":"*.skysolutions.fi","origin":"envoy.networking.svc.cluster.local:443"}
                 ]
               TOWONEL_INVITE_TOKEN:
                 valueFrom:
