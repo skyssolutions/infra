@@ -8,4 +8,5 @@ resources:
 #  - ./echo-server/ks.yaml
   - ./external-dns/ks.yaml
   - ./envoy/ks.yaml
+  - ./towonel-agent/ks.yaml
 #  - ./external-dns/ks-ext.yaml
