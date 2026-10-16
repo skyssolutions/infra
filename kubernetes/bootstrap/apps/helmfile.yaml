@@ -21,7 +21,7 @@ releases:
   - name: kube-prometheus-stack-crds
     namespace: observability
     chart: oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds
-    version: 24.0.2
+    version: 31.0.0
 
   - name: coredns
     namespace: kube-system
