@@ -80,9 +80,9 @@ spec:
     strategy:
       type: 'Recreate'
     image:
-      registry: "code.forgejo.org"
-      repository: forgejo/forgejo
-      tag: "17.0.1"
+      registry: "code.vector.fi"
+      repository: vector/forgejo
+      tag: "17.0.2-vector.4"
       rootless: true
 
     podSecurityContext:
