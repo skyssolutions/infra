@@ -82,7 +82,7 @@ spec:
     image:
       registry: "code.vector.fi"
       repository: vector/forgejo
-      tag: "17.0.2-vector.4"
+      tag: "17.0.2-vector.9"
       rootless: true
 
     podSecurityContext:
